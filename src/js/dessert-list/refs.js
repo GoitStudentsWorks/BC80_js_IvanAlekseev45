@@ -1,3 +1,3 @@
 export default {
-  dessertList: document.querySelector('.desert-list'),
+  dessertList: document.querySelector('.dessert-list'),
 };
