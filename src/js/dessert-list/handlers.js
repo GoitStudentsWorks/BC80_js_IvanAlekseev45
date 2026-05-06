@@ -1,5 +1,6 @@
 import refs from './refs.js';
 import getDesertsResponse from '../api-requests/getDesertsResponse.js';
+import getCategoryResponse from '../api-requests/getCategoryResponse.js';
 
 const renderDesserts = async () => {
   try {
@@ -35,4 +36,24 @@ const renderDesserts = async () => {
   }
 };
 
-export default renderDesserts;
+const renderCategory = async () => {
+  try {
+    const categories = await getCategoryResponse();
+
+    const markup = categories
+      .map(({ id, name }) => {
+        return `
+        <li class="dessert-category__item">
+            <button class="dessert-category__btn" type="button">${name}</button>
+        </li>
+      `;
+      })
+      .join('');
+
+    refs.dessertCategory.insertAdjacentHTML('beforeend', markup);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export default { renderDesserts, renderCategory };

@@ -1,3 +1,4 @@
-import renderDesserts from './handlers';
+import handlers from './handlers.js';
 
-renderDesserts();
+handlers.renderCategory();
+handlers.renderDesserts();
