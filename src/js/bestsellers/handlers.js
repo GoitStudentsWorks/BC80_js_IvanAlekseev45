@@ -2,10 +2,14 @@ import { getBestsellers } from '../api-requests/getBestsellers';
 import { refsBestsellers } from './refs';
 
 let page = 1;
+let total = 0;
+let limit = 3;
 export async function onInitBestsellers(event) {
   refsBestsellers.loaderBestsellers.style.display = 'block';
+  refsBestsellers.bestsellersList.innerHTML = '';
   try {
-    const { desserts } = await getBestsellers(page);
+    const { desserts, totalItems } = await getBestsellers(page);
+    total = totalItems;
     renderBestsellers(desserts);
   } catch (error) {
     console.log(error);
@@ -31,4 +35,17 @@ function renderBestsellers(array) {
     </li>`
   );
   refsBestsellers.bestsellersList.innerHTML = markup;
+}
+
+export function onLeftBtnBestsellersClick(event) {
+  if (page <= 1) return;
+  page -= 1;
+  onInitBestsellers();
+}
+
+export function onRightBtnBestsellersClick(event) {
+  const totalPages = Math.ceil(total / limit);
+  if (page >= totalPages) return;
+  page += 1;
+  onInitBestsellers();
 }
