@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const getDesertsResponse = async () => {
+const getDessertsResponse = async () => {
   const url = `https://deserts-store.b.goit.study/api`;
 
   const { data } = await axios.get(`${url}/desserts`, {
@@ -13,4 +13,4 @@ const getDesertsResponse = async () => {
   return data;
 };
 
-export default getDesertsResponse;
+export default getDessertsResponse;

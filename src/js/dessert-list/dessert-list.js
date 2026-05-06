@@ -1,4 +1,9 @@
-import handlers from './handlers.js';
+import refs from './refs';
+import renderCategory from './renderCategory';
+import renderDesserts from './renderDesserts';
+import handleCategoryFilter from './handlers';
 
-handlers.renderCategory();
-handlers.renderDesserts();
+renderCategory();
+renderDesserts();
+
+refs.dessertCategory.addEventListener('click', handleCategoryFilter);
