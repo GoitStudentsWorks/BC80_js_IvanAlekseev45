@@ -10,7 +10,6 @@
 </div>
  */
 
-/* From Uiverse.io by esraaabdel-kareem */
 .loader {
   width: 100px;
   height: 80px;
@@ -66,7 +65,6 @@
   border-radius: 2px 10px 20px 2px;
 }
 
-/* 🔥 ПАР (оновлено) */
 .loader .cup .smoke {
   position: absolute;
   bottom: 100%;
@@ -81,7 +79,6 @@
   opacity: 0.8;
 }
 
-/* більше щільності за рахунок різних затримок */
 .loader .cup .smoke.one {
   animation-delay: 0s;
 }
@@ -107,7 +104,6 @@
   }
 }
 
-/* 🔥 безперервний підйом пари */
 @keyframes rise {
   0% {
     transform: translate(-50%, 0) scale(0.5);
