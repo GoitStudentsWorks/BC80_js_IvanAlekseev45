@@ -1,0 +1,59 @@
+.bestsellers {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.bestsellers-sections {
+  background: var(--color-scheme-1-background);
+}
+
+.bestsellers-title {
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--color-scheme-1-text);
+}
+.bestsellers-list {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.bestsellers-list-item {
+}
+.bestsellers-image {
+}
+.bestsellers-category {
+}
+.bestsellers-name {
+}
+.bestsellers-description {
+}
+.bestsellers-wrapper {
+}
+.bestsellers-price {
+}
+.bestsellers-modal-btn {
+}
+.bestsellers-button-cvg {
+}
+.bestsellers-nav-btn {
+  display: block;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  border: 2px solid var(--color-scheme-1-border);
+  border-radius: 100px;
+  padding: 12px;
+  width: 48px;
+  height: 48px;
+}
+.page-left-btn {
+}
+.bestsellers-button-cvg {
+}
