@@ -1,39 +1,69 @@
 import { getBestsellers } from '../api-requests/getBestsellers';
 import { refsBestsellers } from './refs';
 
+export const onResizeBestsellers = event => {
+  let newLimit = getLimitByScreen();
+  if (limit === newLimit) return;
+  limit = newLimit;
+  onInitBestsellers();
+};
+
 let page = 1;
 let total = 0;
-let limit = 3;
+let limit = getLimitByScreen();
+
+export function getLimitByScreen() {
+  const width = window.innerWidth;
+
+  if (width >= 1440) return 3;
+
+  if (width >= 768) return 2;
+
+  return 1;
+}
 export async function onInitBestsellers(event) {
-  refsBestsellers.loaderBestsellers.style.display = 'block';
-  refsBestsellers.bestsellersList.innerHTML = '';
+  const list = refsBestsellers.bestsellersList;
+  const loader = refsBestsellers.loaderBestsellers;
+  const wrapper = document.querySelector('.bestseller-loader-wrapper');
+
+  const currentHeight = wrapper.offsetHeight;
+  wrapper.style.height = `${currentHeight}px`;
+
+  loader.style.display = 'block';
+  list.style.visibility = 'hidden';
+  list.innerHTML = '';
   try {
-    const { desserts, totalItems } = await getBestsellers(page);
+    const { desserts, totalItems } = await getBestsellers(page, limit);
     total = totalItems;
     renderBestsellers(desserts);
   } catch (error) {
     console.log(error);
   } finally {
-    refsBestsellers.loaderBestsellers.style.display = 'none';
+    loader.style.display = 'none';
+    list.style.visibility = '';
+
+    wrapper.style.height = 'auto';
   }
 }
 
 function renderBestsellers(array) {
-  const markup = array.map(
-    ({ image, category, description, name, price, _id }) =>
-      `<li class="bestsellers-list-item">
+  const markup = array
+    .map(
+      ({ image, category, description, name, price, _id }) =>
+        `<li class="bestsellers-list-item">
     <img class="bestsellers-image" src="${image}"/>
     <p class="bestsellers-category">${category.name}</p>
-    <h2 class="bestsellers-name">${name}</h2>
+    <h3 class="bestsellers-name">${name}</h3>
     <p class="bestsellers-description">${description}</p>
     <div class="bestsellers-wrapper">
         <p class="bestsellers-price">${price} грн</p>
-        <button class="bestsellers-modal-btn" type="button" data-id="${_id}">
-        <svg class="bestsellers-button-cvg" width="13" height="13" aria-hidden="true"><use href="/img/sprite.svg#icon-arrow_outward"></use></svg>
+        <button class="bestsellers-modal-btn js-dessert-modal-open" type="button" data-id="${_id}">
+        <svg class="bestsellers-button-svg" width="24" height="24" aria-hidden="true"><use href="/img/sprite.svg#icon-arrow_outward"></use></svg>
         </button>
     </div>
     </li>`
-  );
+    )
+    .join('');
   refsBestsellers.bestsellersList.innerHTML = markup;
 }
 
