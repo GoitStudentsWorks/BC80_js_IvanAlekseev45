@@ -1,12 +1,29 @@
+import getDessertsResponse from '../api-requests/getDessertsResponse';
+import dessertsMarkup from './dessertsMarkup';
 import refs from './refs';
 import renderDesserts from './renderDesserts';
-import renderDessertsById from './renderDessertsById';
+
+let page = 1;
+let categoryId = 'all';
+
+const updateLoadMoreButton = totalItems => {
+  const totalPages = Math.ceil(totalItems / 8);
+
+  if (page < totalPages) {
+    refs.dessertLoadMoreBtn.classList.remove('dessert-button-hidden');
+    refs.dessertLoadMoreBtn.disabled = false;
+  } else {
+    refs.dessertLoadMoreBtn.classList.add('dessert-button-hidden');
+    refs.dessertLoadMoreBtn.disabled = true;
+  }
+};
 
 const handleCategoryFilter = async e => {
   const btn = e.target.closest('.dessert-category__btn');
   if (!btn) return;
 
-  const categoryId = btn.dataset.id;
+  page = 1;
+  categoryId = btn.dataset.id;
 
   document
     .querySelectorAll('.dessert-category__btn')
@@ -14,14 +31,29 @@ const handleCategoryFilter = async e => {
 
   btn.classList.add('active__btn');
 
-  if (categoryId === 'all') {
-    refs.dessertList.innerHTML = '';
-    renderDesserts();
-    return;
-  }
-
   refs.dessertList.innerHTML = '';
-  renderDessertsById(categoryId);
+
+  const desserts = await getDessertsResponse(page, categoryId);
+  dessertsMarkup(desserts.desserts);
+
+  updateLoadMoreButton(desserts.totalItems);
 };
 
-export default handleCategoryFilter;
+const handleLoadMoreDesserts = async () => {
+  refs.dessertLoadMoreBtn.classList.add('dessert-button-hidden');
+  refs.dessertLoadMoreBtn.disabled = true;
+
+  page += 1;
+
+  try {
+    const desserts = await getDessertsResponse(page, categoryId);
+
+    dessertsMarkup(desserts.desserts);
+
+    updateLoadMoreButton(desserts.totalItems);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export default { handleCategoryFilter, handleLoadMoreDesserts };

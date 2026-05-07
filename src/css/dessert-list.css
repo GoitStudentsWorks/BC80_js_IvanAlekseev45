@@ -37,18 +37,18 @@
     transition: background 250ms linear;
 
     &:hover,
-    &:focus {
+    &:focus-visible {
       background: var(--color-wewak);
     }
-  }
-}
 
-.active__btn {
-  background: var(--color-wewak-dark);
+    &.active__btn {
+      background: var(--color-wewak-dark);
 
-  &:hover,
-  &:focus {
-    background: var(--color-wewak-light);
+      &:hover,
+      &:focus-visible {
+        background: var(--color-wewak-light);
+      }
+    }
   }
 }
 
@@ -56,6 +56,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 40px 24px;
+  margin-bottom: 40px;
 
   & .dessert-list__item {
     display: flex;
@@ -141,4 +142,35 @@
       }
     }
   }
+}
+
+.dessert-load-more-btn {
+  border: 1px solid var(--color-wewak);
+  border-radius: 100px;
+  width: 198px;
+  height: 44px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--color-wewak);
+
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-neutral-darkest);
+
+  transition: background 250ms linear;
+
+  &:hover,
+  &:focus-visible {
+    background: var(--color-wewak-light);
+  }
+}
+
+.dessert-button-hidden {
+  display: none;
 }
