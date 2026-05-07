@@ -3,7 +3,7 @@
   padding: 48px 0 48px 0;
   font-family: var(--font-family);
   color: var(--color-white);
-  @media only screen and (min-width: 1440px) {
+  @media only screen and (min-width: 1024px) {
     padding: 40px;
   }
 }
@@ -11,28 +11,38 @@
 .container {
   max-width: var(--container-width);
   margin: 0 auto;
-  padding: 0 20px;
 }
 
 /* Верхняя часть: Лого, Навигация, Соцсети */
 .footer-top {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+
   margin-bottom: 40px;
 }
-
-.footer-logo img {
-  height: 50px;
-  display: block;
+.footer-logo {
+  fill: var(--color-white);
+  margin-bottom: 48px;
+  @media only screen and (min-width: 1024px) {
+    margin-bottom: 0;
+    align-items: center;
+  }
 }
 
 /* Меню навигации */
 .footer-menu {
-  list-style: none;
   display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 32px;
   gap: 32px;
+
+  list-style: none;
+  @media only screen and (min-width: 1024px) {
+    margin-bottom: 0;
+  }
 }
 
 .footer-link {
@@ -46,7 +56,7 @@
 .footer-socials {
   list-style: none;
   display: flex;
-  gap: 16px;
+  gap: 12px;
   margin: 0;
   padding: 0;
 }
@@ -73,6 +83,12 @@
 }
 
 /* Адаптивность для мобильных устройств */
+@media only screen and (max-width: 1980px) {
+  .footer-menu {
+    flex-direction: row;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .footer-top {
     flex-direction: column;
@@ -80,7 +96,12 @@
   }
 
   .footer-menu {
+    flex-direction: row;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .footer-menu {
     flex-direction: column;
-    gap: 15px;
   }
 }
