@@ -1,0 +1,86 @@
+.footer {
+  background-color: var(--color-neutral-darker);
+  padding: 48px 0 48px 0;
+  font-family: var(--font-family);
+  color: var(--color-white);
+  @media only screen and (min-width: 1440px) {
+    padding: 40px;
+  }
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Верхняя часть: Лого, Навигация, Соцсети */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.footer-logo img {
+  height: 50px;
+  display: block;
+}
+
+/* Меню навигации */
+.footer-menu {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Иконки соцсетей */
+.footer-socials {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-svg {
+  fill: var(--color-white);
+}
+
+/* Разделительная линия */
+.footer-divider {
+  border: none;
+  border-top: 2px solid var(--color-white);
+  margin-bottom: 32px;
+}
+
+/* Нижняя часть: Копирайт */
+.footer-bottom {
+  text-align: center;
+}
+
+.footer-copyright {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* Адаптивность для мобильных устройств */
+@media only screen and (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-menu {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
