@@ -1,4 +1,4 @@
-import { initDessertModal } from './js/dessert-details-modal/dessert-details-modal';
+import './js/dessert-details-modal/dessert-details-modal.js';
 import './js/dessert-list/dessert-list';
 import './js/faq/faq';
 import './js/feedback/feedback';
@@ -8,4 +8,3 @@ import './js/hero/hero';
 import './js/bestsellers/bestsellers';
 import './js/order-modal/order-modal';
 
-initDessertModal();

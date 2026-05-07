@@ -162,3 +162,5 @@ const createStarsMarkup = rate => {
     </div>
   `;
 };
+
+initDessertModal();
