@@ -178,6 +178,7 @@
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 40px;
+  gap: 32px;
 
   @media screen and (min-width: 768px) {
     gap: 32px 16px;
@@ -207,9 +208,19 @@
 
     & .dessert-list__image {
       border-radius: 8px;
-      width: 278px;
-      height: 209px;
+      width: 303px;
+      height: 227px;
       margin-bottom: 16px;
+
+      @media screen and (min-width: 768px) {
+        width: 312px;
+        height: 234px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        width: 278px;
+        height: 209px;
+      }
     }
 
     & .dessert-list__title {
