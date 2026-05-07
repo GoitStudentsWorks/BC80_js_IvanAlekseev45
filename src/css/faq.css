@@ -1,0 +1,103 @@
+@import 'accordion-js/dist/accordion.min.css';
+
+.accordion-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+
+  width: 375px;
+  padding: 64px 20px;
+  margin: 0 auto;
+
+  background-color: var(--color-scheme-1-background);
+}
+
+.faq-title {
+  padding-bottom: 60px;
+
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: var(--color-scheme-1-text);
+}
+
+.ac {
+  width: 100%;
+  margin: 0;
+
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: transparent;
+}
+
+.ac:first-of-type {
+  border-top: 2px solid black;
+}
+
+.ac-header {
+  margin: 0;
+}
+
+.ac-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  width: 100%;
+  padding: 24px 0;
+
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--color-scheme-1-text);
+
+  border: none;
+  background-color: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ac-title {
+  max-width: 279px;
+}
+
+.ac-icon {
+  flex-shrink: 0;
+  transition: transform 300ms ease;
+}
+
+.ac.is-active .ac-icon {
+  transform: rotate(180deg);
+}
+
+.ac-panel {
+  overflow: hidden;
+}
+
+.ac-text {
+  margin: 0;
+  padding-bottom: 24px;
+
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-scheme-1-text);
+}
+
+@media screen and (min-width: 768px) {
+  .accordion-container {
+    width: 768px;
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+
+  .ac-title {
+    max-width: none;
+  }
+}
