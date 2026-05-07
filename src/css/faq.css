@@ -105,3 +105,62 @@
 .accordion-section {
   background: var(--color-scheme-1-background);
 }
+
+/* ................................................................ */
+
+.accordion-container .ac {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: transparent;
+}
+
+.accordion-container .ac:first-of-type {
+  border-top: 2px solid black;
+}
+
+.accordion-container .ac-header {
+  margin: 0;
+}
+
+.accordion-container .ac-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  width: 100%;
+  padding: 24px 0;
+
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--color-scheme-1-text);
+
+  border: none;
+  background-color: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.accordion-container .ac-trigger::after {
+  display: none !important;
+  content: none !important;
+}
+
+.accordion-container .ac-panel {
+  overflow: hidden;
+}
+
+.accordion-container .ac-text {
+  margin: 0;
+  padding-bottom: 24px;
+
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-scheme-1-text);
+}
