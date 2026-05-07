@@ -7,12 +7,6 @@ const renderDessertsById = async id => {
 
     console.log(desserts);
 
-    // if (desserts.totalItems <= 8) {
-    //   refs.dessertLoadMoreBtn.classList.add('dessert-button-hidden');
-    // } else {
-    //   refs.dessertLoadMoreBtn.classList.remove('dessert-button-hidden');
-    // }
-
     const markup = desserts.desserts
       .map(({ _id, name, description, price, category, image }) => {
         return `
