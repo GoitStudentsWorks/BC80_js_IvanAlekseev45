@@ -61,10 +61,7 @@
   border: 2px solid transparent;
   color: var(--color-neutral-darkest);
 }
-.main-title-link:hover,
-.main-title-link:focus {
-  border: 2px solid var(--color-neutral-darkest);
-}
+
 .main-title-link:active {
   background: var(--color-wewak-dark);
   transition: background-color 250ms linear;
