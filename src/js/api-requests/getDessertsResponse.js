@@ -1,11 +1,14 @@
 import axios from 'axios';
 
-const getDessertsResponse = async () => {
-  const url = `https://deserts-store.b.goit.study/api`;
+const getDessertsResponse = async (page = 1, category = 'all') => {
+  const url =
+    category === 'all'
+      ? `https://deserts-store.b.goit.study/api/desserts`
+      : `https://deserts-store.b.goit.study/api/desserts?category=${category}`;
 
-  const { data } = await axios.get(`${url}/desserts`, {
+  const { data } = await axios.get(`${url}`, {
     params: {
-      page: 1,
+      page,
       limit: 8,
     },
   });

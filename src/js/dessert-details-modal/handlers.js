@@ -1,7 +1,7 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-import { getDessertById } from '../api-requests/getDessertsById.js';
+import { getDessertById } from '../api-requests/getDessertsByCategoryId.js';
 
 import {
   openDessertModal,

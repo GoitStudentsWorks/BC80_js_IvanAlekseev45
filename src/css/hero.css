@@ -4,37 +4,30 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-
   padding-top: 155px;
-  padding-right: 20px;
   padding-bottom: 155px;
-  padding-left: 20px;
 }
 
 .main-title {
   max-width: 335px;
   margin: 0 auto 24px;
-
   font-family: var(--second-family);
   font-weight: 700;
   font-size: 40px;
   line-height: 1.2;
   letter-spacing: -0.01em;
   text-align: center;
-
   color: var(--color-white);
 }
 
 .main-description {
   max-width: 320px;
   margin: 0 auto 32px;
-
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 18px;
   line-height: 1.5;
   text-align: center;
-
   color: var(--color-white);
 }
 
@@ -42,32 +35,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 219px;
   height: 44px;
-
   margin: 0 auto;
   padding: 10px 24px;
-
   border: 1px solid var(--color-wewak);
   border-radius: 100px;
-
   background-color: var(--color-wewak);
-
   font-family: var(--font-family);
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
-  border: 2px solid transparent;
   color: var(--color-neutral-darkest);
-}
-.main-title-link:hover,
-.main-title-link:focus {
-  border: 2px solid var(--color-neutral-darkest);
-}
-.main-title-link:active {
-  background: var(--color-wewak-dark);
   transition: background-color 250ms linear;
+}
+
+.main-title-link:active {
+  background-color: var(--color-wewak-dark);
 }
 
 /* mobile retina */
@@ -83,9 +67,7 @@
     background-image: url('../img/hero/tablet1x.png');
 
     padding-top: 325px;
-    padding-right: 32px;
     padding-bottom: 325px;
-    padding-left: 32px;
   }
 
   .main-title {
@@ -108,11 +90,8 @@
 @media screen and (min-width: 1440px) {
   .hero-section {
     background-image: url('../img/hero/desktop1x.png');
-
     padding-top: 306px;
-    padding-right: 64px;
     padding-bottom: 306px;
-    padding-left: 64px;
   }
 
   .main-title {

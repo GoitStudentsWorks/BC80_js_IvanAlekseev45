@@ -1,11 +1,41 @@
-<section class="section dessert-list-section">
+<section class="section dessert-list-section" id="sweets">
   <div class="container">
-    <h2 class="dessert-section__title">Солодощі</h2>
-    <p class="dessert-section__description">
-      Спробуйте наші смачні десерти, які вас здивують!
-    </p>
+    <div class="dessert-tablet__wrapper">
+      <div class="dessert-tablet-title-left-section">
+        <h2 class="dessert-section__title">Солодощі</h2>
+        <p class="dessert-section__description">
+          Спробуйте наші смачні десерти, які вас здивують!
+        </p>
+      </div>
 
-    <ul class="dessert-category"></ul>
+      <div class="category-dropdown">
+        <button class="category-dropdown__btn" type="button">
+          <p class="category-dropdown__text">Всі десерти</p>
+          <span class="category-dropdown__arrow">
+            <svg width="24" height="24" aria-hidden="true">
+              <use href="/img/sprite.svg#icon-keyboard_arrow_down"></use>
+            </svg>
+          </span>
+        </button>
+
+        <ul class="dessert-category"></ul>
+      </div>
+    </div>
+
     <ul class="dessert-list"></ul>
+
+    <div class="loader dessert-loader">
+      <div class="cup">
+        <div class="cup-handle"></div>
+        <div class="smoke one"></div>
+        <div class="smoke two"></div>
+        <div class="smoke three"></div>
+      </div>
+      <div class="load">..........................</div>
+    </div>
+
+    <button class="dessert-load-more-btn dessert-button-hidden" type="button">
+      Завантажити ще
+    </button>
   </div>
 </section>
