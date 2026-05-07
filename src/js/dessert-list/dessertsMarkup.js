@@ -1,4 +1,5 @@
 import refs from './refs';
+import spriteUrl from '../../img/sprite.svg';
 
 const dessertsMarkup = desserts => {
   const markup = desserts
@@ -29,7 +30,7 @@ const dessertsMarkup = desserts => {
           <p class="dessert-list__price">${price} грн</p>
           <button class="dessert-list__btn js-dessert-modal-open" type="button" data-id="${_id}">
             <svg width="17" height="17" class="dessert-list__icon" aria-hidden="true">
-              <use href="/img/sprite.svg#icon-arrow_outward"></use>
+              <use href="${spriteUrl}#icon-arrow_outward"></use>
             </svg>
           </button>
         </div>
