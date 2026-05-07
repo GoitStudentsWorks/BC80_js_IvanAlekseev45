@@ -1,4 +1,4 @@
-import 'css-star-rating/css/star-rating.min.css';
+// import 'css-star-rating/css/star-rating.min.css';
 
 import { refs } from './refs.js';
 
@@ -78,17 +78,13 @@ export const getModalRoot = () => {
 };
 
 export const renderDessertModalContent = dessert => {
+  if (!modalRoot) {
+    return;
+  }
+
   const content = modalRoot.querySelector('.dessert-modal__content');
 
-  const {
-    _id,
-    name,
-    price,
-    rate,
-    description,
-    composition,
-    image,
-  } = dessert;
+  const { _id, name, price, rate, description, composition, image } = dessert;
 
   const compositionText = composition || '';
 
@@ -138,27 +134,40 @@ const normalizeRating = rate => {
     return 0;
   }
 
-  return Math.round(numberRate * 2) / 2;
+  const roundedRate = Math.round(numberRate * 2) / 2;
+
+  return Math.min(Math.max(roundedRate, 0), 5);
 };
 
 const createStarsMarkup = rate => {
   const normalizedRating = normalizeRating(rate);
 
+  const fullStars = Math.floor(normalizedRating);
+  const hasHalfStar = normalizedRating % 1 !== 0;
+
   return `
-    <div class="dessert-rating" aria-label="Рейтинг ${normalizedRating} з 5">
-      ${[1, 2, 3, 4, 5]
-        .map(starNumber => {
-          if (normalizedRating >= starNumber) {
-            return '<span class="dessert-rating__star dessert-rating__star--filled">★</span>';
-          }
-
-          if (normalizedRating === starNumber - 0.5) {
-            return '<span class="dessert-rating__star dessert-rating__star--half">★</span>';
-          }
-
-          return '<span class="dessert-rating__star">☆</span>';
-        })
-        .join('')}
+    <div
+      class="rating medium star-svg color-default direction-ltr value-${fullStars} ${hasHalfStar ? 'half' : ''}"
+      aria-label="Рейтинг ${normalizedRating} з 5"
+    >
+      <div class="star-container">
+        ${Array.from(
+          { length: 5 },
+          () => `
+            <div class="star">
+              <svg class="star-empty">
+                <use href="/img/star-rating.icons.svg#star-empty"></use>
+              </svg>
+              <svg class="star-half">
+                <use href="/img/star-rating.icons.svg#star-half"></use>
+              </svg>
+              <svg class="star-filled">
+                <use href="/img/star-rating.icons.svg#star-filled"></use>
+              </svg>
+            </div>
+          `
+        ).join('')}
+      </div>
     </div>
   `;
 };
