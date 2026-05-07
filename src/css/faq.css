@@ -101,3 +101,7 @@
     max-width: none;
   }
 }
+
+.accordion-section {
+  background: var(--color-scheme-1-background);
+}
