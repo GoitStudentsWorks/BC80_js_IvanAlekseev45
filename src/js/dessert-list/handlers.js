@@ -26,10 +26,14 @@ const handleCategoryFilter = async e => {
   page = 1;
   categoryId = btn.dataset.id;
 
+  document
+    .querySelectorAll('.dessert-category__btn')
+    .forEach(btn => btn.classList.remove('active__btn'));
+
+  btn.classList.add('active__btn');
+
   refs.dessertList.innerHTML = '';
   loader.showLoader();
-
-  await new Promise(resolve => requestAnimationFrame(resolve));
 
   try {
     const desserts = await getDessertsResponse(page, categoryId);
