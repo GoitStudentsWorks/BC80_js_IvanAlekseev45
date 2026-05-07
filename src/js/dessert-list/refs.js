@@ -5,4 +5,5 @@ export default {
   dropdown: document.querySelector('.category-dropdown'),
   dropdownBtn: document.querySelector('.category-dropdown__btn'),
   dropdownText: document.querySelector('.category-dropdown__text'),
+  dessertLoader: document.querySelector('.dessert-loader'),
 };

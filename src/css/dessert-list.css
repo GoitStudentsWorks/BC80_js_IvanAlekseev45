@@ -211,6 +211,12 @@
       width: 303px;
       height: 227px;
       margin-bottom: 16px;
+      display: none;
+      transition: display 250ms linear;
+
+      &.img__is-loaded {
+        display: block;
+      }
 
       @media screen and (min-width: 768px) {
         width: 312px;
@@ -320,4 +326,29 @@
 
 .dessert-button-hidden {
   display: none;
+}
+
+.dessert-loader {
+  margin: 0 auto;
+}
+
+.loader-sizes-skeleton {
+  width: 301px;
+  height: 227px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 16px;
+
+  @media screen and (min-width: 768px) {
+    width: 310px;
+    height: 234px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 276px;
+    height: 209px;
+  }
 }
