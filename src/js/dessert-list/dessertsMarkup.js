@@ -20,7 +20,7 @@ const dessertsMarkup = desserts => {
             </div>
           </div>
 
-          <img class="dessert-list__image" src="${image}" alt="${name}" />
+          <img class="dessert-list__image" src="${image}" alt="${name}" loading="eager" fetchpriority="high" />
           <p class="dessert-list__category">${category.name}</p>
 
           <p class="dessert-list__title">${name}</p>
