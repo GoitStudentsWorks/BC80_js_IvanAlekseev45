@@ -25,12 +25,6 @@ export const onOrderFormSubmit = async event => {
   event.preventDefault();
 
   const form = event.currentTarget;
-
-  if (!form.checkValidity()) {
-    form.reportValidity();
-    return;
-  }
-
   const dessertId = getSelectedDessertId();
 
   if (!dessertId) {
@@ -38,6 +32,7 @@ export const onOrderFormSubmit = async event => {
       message: 'Не вдалося визначити десерт для замовлення',
       position: 'topRight',
       color: '#FA5053',
+      messageColor: '#ffffff',
       class: 'custom-toast',
     });
 
@@ -46,28 +41,80 @@ export const onOrderFormSubmit = async event => {
 
   const formData = new FormData(form);
 
+  const name = formData.get('name').trim();
   const rawPhone = formData.get('phone').trim();
+  const phone = rawPhone.replace(/\D/g, '');
+  const comment = formData.get('comment').trim();
 
-const orderData = {
-  name: formData.get('name').trim(),
-  phone: rawPhone.replace(/\D/g, ''),
-  dessertId,
-  comment: formData.get('comment').trim(),
-};
+  if (!name) {
+    iziToast.error({
+      message: 'Введіть ім’я',
+      position: 'center',
+      color: '#f5b6b6',
+      messageColor: '#000000',
+      class: 'custom-toast',
+    });
 
-const phonePattern = /^380[0-9]{9}$/;
+    return;
+  }
 
-if (!phonePattern.test(orderData.phone)) {
-  iziToast.error({
-    message: 'Введіть телефон у форматі 380961234568',
-    position: 'center',
-    color: '#FA5053',
-    messageColor: '#ffffff',
-    class: 'custom-toast',
-  });
+  if (name.length < 2) {
+    iziToast.error({
+      message: 'Ім’я має містити щонайменше 2 символи',
+      position: 'center',
+      color: '#f5b6b6',
+      messageColor: '#000000',
+      class: 'custom-toast',
+    });
 
-  return;
-}
+    return;
+  }
+
+  const phonePattern = /^380[0-9]{9}$/;
+
+  if (!phonePattern.test(phone)) {
+    iziToast.error({
+      message: 'Введіть телефон у форматі 380961234568',
+      position: 'center',
+      color: '#f5b6b6',
+      messageColor: '#000000',
+      class: 'custom-toast',
+    });
+
+    return;
+  }
+
+  if (!comment) {
+    iziToast.error({
+      message: 'Введіть коментар',
+      position: 'center',
+      color: '#f5b6b6',
+      messageColor: '#000000',
+      class: 'custom-toast',
+    });
+
+    return;
+  }
+
+  if (comment.length < 5) {
+    iziToast.error({
+      message: 'Коментар має містити щонайменше 5 символів',
+      position: 'center',
+      color: '#f5b6b6',
+      messageColor: '#000000',
+      class: 'custom-toast',
+    });
+
+    return;
+  }
+
+  const orderData = {
+    name,
+    phone,
+    dessertId,
+    comment,
+  };
+
   try {
     await postOrder(orderData);
 
@@ -83,17 +130,17 @@ if (!phonePattern.test(orderData.phone)) {
     closeOrderModal();
   } catch (error) {
     console.log('Error in order submit:', error);
-  console.log('Server response:', error.response?.data);
-  console.log('Status:', error.response?.status);
+    console.log('Server response:', error.response?.data);
+    console.log('Status:', error.response?.status);
 
-  iziToast.error({
-    message:
-      error.response?.data?.message ||
-      'Не вдалося надіслати заявку. Спробуйте ще раз.',
-    position: 'topRight',
-    color: '#FA5053',
-    messageColor: '#ffffff',
-    class: 'custom-toast',
-  });
+    iziToast.error({
+      message:
+        error.response?.data?.message ||
+        'Не вдалося надіслати заявку. Спробуйте ще раз.',
+      position: 'topRight',
+      color: '#FA5053',
+      messageColor: '#ffffff',
+      class: 'custom-toast',
+    });
   }
 };

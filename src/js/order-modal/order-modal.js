@@ -46,7 +46,7 @@ export const openOrderModal = dessertId => {
           height="24"
           aria-hidden="true"
         >
-          <use href="/img/sprite.svg#icon-close"></use>
+          <use href="../img/sprite.svg#icon-close"></use>
         </svg>
       </button>
 
@@ -54,16 +54,14 @@ export const openOrderModal = dessertId => {
         Оформлення замовлення
       </h2>
 
-      <form class="order-form js-order-form">
-        <label class="order-form__label">
-          <span class="order-form__label-text">Ім'я*</span>
-          <input
-            class="order-form__input"
-            type="text"
-            name="name"
+      <form class="order-form js-order-form" novalidate>
+      <label class="order-form__label">
+        <span class="order-form__label-text">Ім'я*</span>
+        <input
+          class="order-form__input"
+          type="text"
+          name="name"
             placeholder="Вікторія"
-            required
-            minlength="2"
           />
         </label>
 
@@ -74,7 +72,6 @@ export const openOrderModal = dessertId => {
             type="tel"
             name="phone"
             placeholder="38 0__ ______"
-            required
           />
         </label>
 
@@ -84,8 +81,6 @@ export const openOrderModal = dessertId => {
             class="order-form__textarea"
             name="comment"
             placeholder="Ваш коментар"
-            required
-            minlength="5"
           ></textarea>
         </label>
 
