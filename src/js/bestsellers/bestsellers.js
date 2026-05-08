@@ -4,6 +4,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+import bestsellersUrl from '../../img/sprite.svg';
+
 import { refsBestsellers } from './refs';
 import { onInitBestsellers } from './handlers';
 
@@ -24,7 +26,7 @@ export function renderBestsellers(array) {
             <p class="bestsellers-price">${price} грн</p>
             <button class="bestsellers-modal-btn js-dessert-modal-open" type="button" data-id="${_id}">
               <svg width="24" height="24" aria-hidden="true">
-                <use href="/img/sprite.svg#icon-arrow_outward"></use>
+                <use href="${bestsellersUrl}#icon-arrow_outward"></use>
               </svg>
             </button>
           </div>
@@ -42,29 +44,32 @@ export function renderBestsellers(array) {
   swiper = new Swiper('.swiper-bestsellers', {
     modules: [Navigation, Pagination],
 
-    pagination: {
-      el: '.swiper-pagination',
-      dynamicBullets: true,
-    },
-
-    navigation: {
-      prevEl: '.page-left-btn',
-      nextEl: '.page-right-btn',
-    },
-
     slidesPerView: 1,
+    slidesPerGroup: 1,
     spaceBetween: 16,
 
     breakpoints: {
       768: {
         slidesPerView: 2,
+        slidesPerGroup: 2,
         spaceBetween: 16,
       },
-
       1280: {
         slidesPerView: 3,
+        slidesPerGroup: 3,
         spaceBetween: 24,
       },
+    },
+
+    pagination: {
+      el: '.swiper-pagination',
+      dynamicBullets: true,
+      clickable: true,
+    },
+
+    navigation: {
+      prevEl: '.page-left-btn',
+      nextEl: '.page-right-btn',
     },
   });
 }
