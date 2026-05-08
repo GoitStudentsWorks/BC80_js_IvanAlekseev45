@@ -4,6 +4,8 @@ import renderDesserts from './renderDesserts';
 import loader from './loader';
 import refs from './refs';
 
+import iziToast from 'izitoast';
+
 let page = 1;
 let categoryId = 'all';
 
@@ -26,17 +28,24 @@ const handleCategoryFilter = async e => {
   page = 1;
   categoryId = btn.dataset.id;
 
+  document
+    .querySelectorAll('.dessert-category__btn')
+    .forEach(btn => btn.classList.remove('active__btn'));
+
+  btn.classList.add('active__btn');
+
   refs.dessertList.innerHTML = '';
   loader.showLoader();
-
-  await new Promise(resolve => requestAnimationFrame(resolve));
 
   try {
     const desserts = await getDessertsResponse(page, categoryId);
     dessertsMarkup(desserts.desserts);
     updateLoadMoreButton(desserts.totalItems);
-  } catch (error) {
-    console.log(error);
+  } catch {
+    iziToast.error({
+      message: 'Виникла помилка при зміні категорії, спробуйте пізніше.',
+      position: 'topRight',
+    });
   } finally {
     loader.hideLoader();
   }
@@ -51,12 +60,18 @@ const handleLoadMoreDesserts = async () => {
   page += 1;
 
   try {
-    const desserts = await getDessertsResponse(page, categoryId);
+    const { desserts, totalItems } = await getDessertsResponse(
+      page,
+      categoryId,
+    );
 
-    dessertsMarkup(desserts.desserts);
-    updateLoadMoreButton(desserts.totalItems);
-  } catch (error) {
-    console.log(error);
+    dessertsMarkup(desserts);
+    updateLoadMoreButton(totalItems);
+  } catch {
+    iziToast.error({
+      message: 'Виникла помилка при завантаженні десертів, спробуйте пізніше.',
+      position: 'topRight',
+    });
   } finally {
     loader.hideLoader();
   }

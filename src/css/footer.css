@@ -1,127 +1,83 @@
 .footer {
-  background-color: var(--color-neutral-darker);
-  padding: 48px 0 48px 0;
-  font-family: var(--font-family);
-  color: var(--color-white);
-  @media only screen and (min-width: 1024px) {
-    padding: 40px;
+  padding: 83px 20px 48px 20px;
+
+  color: var(--color-scheme-2-background);
+  background-color: black;
+  @media only screen and (min-width: 1440px) {
+    padding: 75px 0px 40px 0;
   }
 }
 
-.container {
-  max-width: var(--container-width);
-  margin: 0 auto;
-}
-
-/* Верхняя часть: Лого, Навигация, Соцсети */
 .footer-top {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  margin-bottom: 40px;
-  @media only screen and (min-width: 768px) {
-    justify-content: space-between;
-  }
-}
-
-.footer-nav-social {
-  width: 100%;
-  display: flex;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
-
-  @media only screen and (min-width: 1024px) {
-    justify-content: space-between;
-    flex-direction: row;
-  }
-}
-.footer-logo {
-  fill: var(--color-white);
-  margin-bottom: 48px;
-  @media only screen and (min-width: 1024px) {
-    justify-content: center;
-    align-items: center;
-    margin-right: 50px;
-    margin-bottom: 0;
-  }
+  flex-direction: column;
   @media only screen and (min-width: 1440px) {
-    margin-right: 120px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 75px;
   }
 }
 
-/* Меню навигации */
+.footer-nav {
+  margin-bottom: 32px;
+
+  font-family: var(--font-family);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  @media only screen and (min-width: 1440px) {
+    margin: 0;
+    font-size: 14px;
+  }
+}
+
 .footer-menu {
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  margin-bottom: 32px;
+  align-items: center;
+
   gap: 32px;
-
-  list-style: none;
-  @media only screen and (min-width: 1024px) {
-    margin-bottom: 0;
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
   }
 }
 
-.footer-link {
-  text-decoration: none;
-  color: var(--text-color);
-  font-weight: 600;
-  font-size: 14px;
+.footer-logo {
+  margin-bottom: 67px;
+  fill: var(--color-scheme-2-background);
+  @media only screen and (min-width: 1440px) {
+    margin: 0;
+  }
 }
 
-/* Иконки соцсетей */
 .footer-socials {
-  list-style: none;
   display: flex;
-  gap: 12px;
-  margin: 0;
-  padding: 0;
+  margin-bottom: 48px;
+
+  gap: 31px;
+
+  fill: var(--color-scheme-2-background);
+  @media only screen and (min-width: 1440px) {
+    margin: 0;
+  }
 }
 
-.footer-svg {
-  fill: var(--color-white);
-}
-
-/* Разделительная линия */
 .footer-divider {
-  border: none;
-  border-top: 2px solid var(--color-white);
+  margin: 0;
   margin-bottom: 32px;
 }
-
-/* Нижняя часть: Копирайт */
 .footer-bottom {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 .footer-copyright {
-  font-size: 14px;
+  font-family: var(--font-family);
   font-weight: 400;
-}
-
-/* Адаптивность для мобильных устройств */
-@media only screen and (max-width: 1980px) {
-  .footer-menu {
-    flex-direction: row;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .footer-top {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .footer-menu {
-    flex-direction: row;
-  }
-}
-
-@media only screen and (max-width: 375px) {
-  .footer-menu {
-    flex-direction: column;
-  }
+  font-size: 14px;
+  line-height: 1.5;
 }

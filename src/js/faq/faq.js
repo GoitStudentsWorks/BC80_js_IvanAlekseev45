@@ -1,6 +1,6 @@
 import Accordion from 'accordion-js';
 
 new Accordion('.accordion-container', {
-  showMultiple: true,
+  showMultiple: false,
   duration: 300,
 });
