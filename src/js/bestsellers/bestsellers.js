@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Keyboard } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -45,7 +45,7 @@ export function renderBestsellers(array) {
             </div>
             <div class="bestsellers-wrapper">
                 <p class="bestsellers-price">${price} грн</p>
-                <button class="bestsellers-modal-btn js-dessert-modal-open" type="button" data-id="${_id}">
+                <button class="bestsellers-modal-btn js-dessert-modal-open" type="button" aria-label="Подивитись детальну інформацію" data-id="${_id}">
                 <svg width="24" height="24" aria-hidden="true">
                     <use href="${bestsellersUrl}#icon-arrow_outward"></use>
                 </svg>
@@ -63,8 +63,12 @@ export function renderBestsellers(array) {
   }
 
   swiper = new Swiper('.swiper-bestsellers', {
-    modules: [Navigation, Pagination],
+    modules: [Navigation, Pagination, Keyboard],
 
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true,
+    },
     slidesPerView: 1,
     slidesPerGroup: 1,
     spaceBetween: 16,
