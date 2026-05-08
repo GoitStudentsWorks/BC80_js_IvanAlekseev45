@@ -1,3 +1,5 @@
+@import 'css-star-rating/css/star-rating.min.css';
+
 .no-scroll {
   overflow: hidden;
   height: 100vh;
@@ -99,6 +101,7 @@
 }
 
 .dessert-modal__title {
+  margin-bottom: 24px;
   font-weight: 700;
   font-size: 32px;
     line-height: 1.2;
@@ -125,43 +128,30 @@
 
 /* Rating */
 
-.dessert-rating {
+.dessert-modal__rating {
+  margin-bottom: 24px;
+}
+
+.dessert-modal__rating .rating {
+  display: inline-flex;
+  width: auto;
+  height: auto;
+}
+
+.dessert-modal__rating .star-container {
   display: flex;
   align-items: center;
   gap: 4px;
-  pointer-events: none;
 }
 
-.dessert-rating__star {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.dessert-modal__rating .star {
+  position: relative;
   width: 16px;
   height: 16px;
-  color: var(--color-scheme-1-text);
 }
 
-.dessert-rating__star--half {
-  position: relative;
-  color: transparent;
-}
-
-.dessert-rating__star--half::before {
-  content: '★';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  overflow: hidden;
-  color: var(--color-scheme-1-text);
-}
-
-.dessert-rating__star--half::after {
-  content: '☆';
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: var(--color-scheme-1-text);
+.dessert-modal__rating .rating .star-container .star svg {
+  fill: var(--color-scheme-1-text) !important;
 }
 
 /* Order button */
