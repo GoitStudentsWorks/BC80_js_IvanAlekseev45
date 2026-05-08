@@ -1,0 +1,127 @@
+.footer {
+  background-color: var(--color-neutral-darker);
+  padding: 48px 0 48px 0;
+  font-family: var(--font-family);
+  color: var(--color-white);
+  @media only screen and (min-width: 1024px) {
+    padding: 40px;
+  }
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+/* Верхняя часть: Лого, Навигация, Соцсети */
+.footer-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  margin-bottom: 40px;
+  @media only screen and (min-width: 768px) {
+    justify-content: space-between;
+  }
+}
+
+.footer-nav-social {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  @media only screen and (min-width: 1024px) {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+.footer-logo {
+  fill: var(--color-white);
+  margin-bottom: 48px;
+  @media only screen and (min-width: 1024px) {
+    justify-content: center;
+    align-items: center;
+    margin-right: 50px;
+    margin-bottom: 0;
+  }
+  @media only screen and (min-width: 1440px) {
+    margin-right: 120px;
+  }
+}
+
+/* Меню навигации */
+.footer-menu {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 32px;
+  gap: 32px;
+
+  list-style: none;
+  @media only screen and (min-width: 1024px) {
+    margin-bottom: 0;
+  }
+}
+
+.footer-link {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Иконки соцсетей */
+.footer-socials {
+  list-style: none;
+  display: flex;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-svg {
+  fill: var(--color-white);
+}
+
+/* Разделительная линия */
+.footer-divider {
+  border: none;
+  border-top: 2px solid var(--color-white);
+  margin-bottom: 32px;
+}
+
+/* Нижняя часть: Копирайт */
+.footer-bottom {
+  text-align: center;
+}
+
+.footer-copyright {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* Адаптивность для мобильных устройств */
+@media only screen and (max-width: 1980px) {
+  .footer-menu {
+    flex-direction: row;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-menu {
+    flex-direction: row;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .footer-menu {
+    flex-direction: column;
+  }
+}
