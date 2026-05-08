@@ -1,13 +1,12 @@
 import refs from './refs';
 import getDessertsByCategoryId from '../api-requests/getDessertsByCategoryId';
+import iziToast from 'izitoast';
 
 const renderDessertsById = async id => {
   try {
-    const desserts = await getDessertsByCategoryId(id);
+    const { desserts } = await getDessertsByCategoryId(id);
 
-    console.log(desserts);
-
-    const markup = desserts.desserts
+    const markup = desserts
       .map(({ _id, name, description, price, category, image }) => {
         return `
         <li class="dessert-list__item">
@@ -32,8 +31,11 @@ const renderDessertsById = async id => {
       .join('');
 
     refs.dessertList.insertAdjacentHTML('beforeend', markup);
-  } catch (error) {
-    console.log(error);
+  } catch {
+    iziToast.error({
+      message: 'Виникла помилка при завантаженні десертів, спробуйте пізніше.',
+      position: 'topRight',
+    });
   }
 };
 
