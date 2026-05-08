@@ -33,7 +33,7 @@ export const openDessertModal = () => {
           height="24"
           aria-hidden="true"
         >
-          <use href="../img/sprite.svg#icon-close"></use>
+          <use href="${import.meta.env.BASE_URL}img/sprite.svg#icon-close"></use>
         </svg>
       </button>
 
@@ -156,13 +156,13 @@ const createStarsMarkup = rate => {
           () => `
             <div class="star">
               <svg class="star-empty">
-                <use href="../img/star-rating.icons.svg#star-empty"></use>
+                <use href="${import.meta.env.BASE_URL}img/star-rating.icons.svg#star-empty"></use>
               </svg>
               <svg class="star-half">
-                <use href="../img/star-rating.icons.svg#star-half"></use>
+                <use href="${import.meta.env.BASE_URL}img/star-rating.icons.svg#star-half"></use>
               </svg>
               <svg class="star-filled">
-                <use href="../img/star-rating.icons.svg#star-filled"></use>
+                <use href="${import.meta.env.BASE_URL}img/star-rating.icons.svg#star-filled"></use>
               </svg>
             </div>
           `

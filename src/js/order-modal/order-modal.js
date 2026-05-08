@@ -46,7 +46,7 @@ export const openOrderModal = dessertId => {
           height="24"
           aria-hidden="true"
         >
-          <use href="../img/sprite.svg#icon-close"></use>
+          <use href="${import.meta.env.BASE_URL}img/sprite.svg#icon-close"></use>
         </svg>
       </button>
 
