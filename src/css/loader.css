@@ -11,61 +11,58 @@
  */
 
 .loader {
-  width: 100px;
-  height: 80px;
   position: relative;
   display: flex;
-  justify-items: center;
   align-items: center;
+  width: 100px;
+  height: 80px;
 }
 
-.loader .cup {
+.cup {
   position: absolute;
+  z-index: 1;
   width: 25px;
   height: 18px;
-  background-color: #fff;
+  background: #fff;
   border: 1px solid #2e2e2e;
-  z-index: 1;
   border-radius: 2px 2px 10px 10px;
   animation: move 6s linear infinite;
 }
 
+.cup::before,
 .cup::after {
   content: '';
   position: absolute;
-  top: -2px;
   width: calc(100% - 2px);
-  height: 2px;
-  background: #fed59fca;
-  border: 1px solid #2e2e2ebe;
+  border: 1px solid rgba(46, 46, 46, 0.745);
   border-radius: 50%;
+}
+
+.cup::after {
+  top: -2px;
+  height: 2px;
+  background: rgba(254, 213, 159, 0.792);
 }
 
 .cup::before {
-  content: '';
-  position: absolute;
   top: 15px;
-  width: calc(100% - 2px);
   height: 4px;
-  background: #ffffff00;
-  border: 1px solid #2e2e2e;
   border-top: none;
-  border-radius: 50%;
   z-index: -1;
 }
 
-.loader .cup .cup-handle {
+.cup-handle {
   position: absolute;
+  top: 2px;
+  right: -5px;
   width: 5px;
   height: 10px;
-  background-color: #fff;
+  background: #fff;
   border: 1px solid #2e2e2e;
-  right: -5px;
-  top: 2px;
   border-radius: 2px 10px 20px 2px;
 }
 
-.loader .cup .smoke {
+.smoke {
   position: absolute;
   bottom: 100%;
   left: 50%;
@@ -73,34 +70,36 @@
   height: 28px;
   background: rgba(146, 133, 119, 0.4);
   border-radius: 50%;
-  transform: translateX(-50%) scale(0.6);
-  animation: rise 3s linear infinite;
   filter: blur(10px);
-  opacity: 0.8;
+  animation: rise 3s linear infinite;
 }
 
-.loader .cup .smoke.one {
+.smoke.one {
   animation-delay: 0s;
 }
-
-.loader .cup .smoke.two {
+.smoke.two {
   animation-delay: 1s;
 }
-
-.loader .cup .smoke.three {
+.smoke.three {
   animation-delay: 2s;
 }
 
-/* рух чашки */
+.load {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  font-size: 10px;
+  opacity: 0.7;
+  transform: translateX(-50%);
+}
+
 @keyframes move {
-  0% {
+  0%,
+  100% {
     transform: translateX(0);
   }
   50% {
     transform: translateX(64px);
-  }
-  100% {
-    transform: translateX(0);
   }
 }
 
@@ -119,13 +118,4 @@
     transform: translate(-50%, -30px) scale(1.2);
     opacity: 0;
   }
-}
-
-.loader .load {
-  position: absolute;
-  font-size: 10px;
-  opacity: 0.7;
-  top: 45%;
-  left: 50%;
-  transform: translateX(-50%);
 }

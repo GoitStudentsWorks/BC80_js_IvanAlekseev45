@@ -29,7 +29,46 @@ function equalizeSlideHeights() {
       if (item.offsetHeight > maxHeight) maxHeight = item.offsetHeight;
     });
     items.forEach(item => (item.style.height = maxHeight + 'px'));
+    if (swiper) swiper.update();
   });
+}
+
+function injectLoaders() {
+  refsBestsellers.bestsellersList
+    .querySelectorAll('.bestsellers-image')
+    .forEach(img => {
+      const showImage = () => {
+        loaderEl.remove();
+        img.style.visibility = 'visible';
+      };
+
+      if (img.complete && img.naturalWidth !== 0) {
+        img.style.visibility = 'visible';
+        return;
+      }
+
+      const loaderEl = document.createElement('div');
+      loaderEl.className = 'loader-sizes-skeleton';
+      loaderEl.setAttribute('aria-hidden', 'true');
+      loaderEl.style.cssText =
+        'position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index:1;';
+      loaderEl.innerHTML = `
+      <div class='loader bestsellers-image-loader-dynamic'>
+        <div class="cup">
+          <div class="cup-handle"></div>
+          <div class="smoke one"></div>
+          <div class="smoke two"></div>
+          <div class="smoke three"></div>
+        </div>
+        <div class="load">..........................</div>
+        </div>
+      `;
+
+      img.closest('.bestsellers-top').prepend(loaderEl);
+
+      img.addEventListener('load', showImage);
+      img.addEventListener('error', showImage);
+    });
 }
 
 export function renderBestsellers(array) {
@@ -37,20 +76,20 @@ export function renderBestsellers(array) {
     .map(
       ({ image, category, description, name, price, _id }) =>
         `<li class="bestsellers-list-item swiper-slide">
-            <div class="bestsellers-top">
-                <img class="bestsellers-image" src="${image}" alt="${name}"/>
-                <p class="bestsellers-category">${category.name}</p>
-                <h3 class="bestsellers-name">${name}</h3>
-                <p class="bestsellers-description">${description}</p>
-            </div>
-            <div class="bestsellers-wrapper">
-                <p class="bestsellers-price">${price} грн</p>
-                <button class="bestsellers-modal-btn js-dessert-modal-open" type="button" aria-label="Подивитись детальну інформацію" data-id="${_id}">
-                <svg width="24" height="24" aria-hidden="true">
-                    <use href="${bestsellersUrl}#icon-arrow_outward"></use>
-                </svg>
-                </button>
-            </div>
+          <div class="bestsellers-top">
+            <img class="bestsellers-image" src="${image}" alt="${name}"  style="visibility:hidden"/>
+            <p class="bestsellers-category">${category.name}</p>
+            <h3 class="bestsellers-name">${name}</h3>
+            <p class="bestsellers-description">${description}</p>
+          </div>
+          <div class="bestsellers-wrapper">
+            <p class="bestsellers-price">${price} грн</p>
+            <button class="bestsellers-modal-btn js-dessert-modal-open" type="button" aria-label="Подивитись детальну інформацію" data-id="${_id}">
+              <svg width="24" height="24" aria-hidden="true">
+                <use href="${bestsellersUrl}#icon-arrow_outward"></use>
+              </svg>
+            </button>
+          </div>
         </li>`
     )
     .join('');
@@ -69,6 +108,7 @@ export function renderBestsellers(array) {
       enabled: true,
       onlyInViewport: true,
     },
+
     slidesPerView: 1,
     slidesPerGroup: 1,
     spaceBetween: 16,
@@ -100,6 +140,7 @@ export function renderBestsellers(array) {
     on: {
       init() {
         equalizeSlideHeights();
+        injectLoaders();
       },
       resize() {
         equalizeSlideHeights();
