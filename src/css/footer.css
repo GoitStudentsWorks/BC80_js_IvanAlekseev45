@@ -3,6 +3,9 @@
 
   color: var(--color-scheme-2-background);
   background-color: black;
+  @media only screen and (min-width: 1440px) {
+    padding: 75px 0px 0px 60px;
+  }
 }
 
 .footer-top {
