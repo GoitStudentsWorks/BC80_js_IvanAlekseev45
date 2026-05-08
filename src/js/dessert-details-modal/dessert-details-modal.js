@@ -1,6 +1,7 @@
-// import 'css-star-rating/css/star-rating.min.css';
-
 import { refs } from './refs.js';
+
+import spriteUrl from '../../img/sprite.svg?url';
+import ratingIconsUrl from '../../img/star-rating.icons.svg?url';
 
 import {
   onOpenDessertModalClick,
@@ -33,7 +34,7 @@ export const openDessertModal = () => {
           height="24"
           aria-hidden="true"
         >
-          <use href="${import.meta.env.BASE_URL}img/sprite.svg#icon-close"></use>
+          <use href="${spriteUrl}#icon-close"></use>
         </svg>
       </button>
 
@@ -156,13 +157,13 @@ const createStarsMarkup = rate => {
           () => `
             <div class="star">
               <svg class="star-empty">
-                <use href="${import.meta.env.BASE_URL}img/star-rating.icons.svg#star-empty"></use>
+               <use href="${ratingIconsUrl}#star-empty"></use>
               </svg>
               <svg class="star-half">
-                <use href="${import.meta.env.BASE_URL}img/star-rating.icons.svg#star-half"></use>
+                 <use href="${ratingIconsUrl}#star-half"></use>
               </svg>
               <svg class="star-filled">
-                <use href="${import.meta.env.BASE_URL}img/star-rating.icons.svg#star-filled"></use>
+                <use href="${ratingIconsUrl}#star-filled"></use>
               </svg>
             </div>
           `
