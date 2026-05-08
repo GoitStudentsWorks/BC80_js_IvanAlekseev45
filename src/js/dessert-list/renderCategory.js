@@ -1,6 +1,8 @@
 import getCategoryResponse from '../api-requests/getCategoryResponse.js';
 import refs from './refs.js';
 
+import iziToast from 'izitoast';
+
 const renderCategory = async () => {
   try {
     const categories = await getCategoryResponse();
@@ -22,8 +24,11 @@ const renderCategory = async () => {
       .join('');
 
     refs.dessertCategory.insertAdjacentHTML('beforeend', allBtn + markup);
-  } catch (error) {
-    console.log(error);
+  } catch {
+    iziToast.error({
+      message: 'Виникла помилка при завантаженні категорій, спробуйте пізніше.',
+      position: 'topRight',
+    });
   }
 };
 
