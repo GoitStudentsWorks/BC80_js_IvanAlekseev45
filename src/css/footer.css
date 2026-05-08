@@ -8,10 +8,10 @@
   }
 }
 
-.container {
+/* .container {
   max-width: var(--container-width);
   margin: 0 auto;
-}
+} */
 
 /* Верхняя часть: Лого, Навигация, Соцсети */
 .footer-top {
