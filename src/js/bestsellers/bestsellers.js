@@ -45,7 +45,7 @@ export function renderBestsellers(array) {
             </div>
             <div class="bestsellers-wrapper">
                 <p class="bestsellers-price">${price} грн</p>
-                <button class="bestsellers-modal-btn js-dessert-modal-open" type="button" data-id="${_id}">
+                <button class="bestsellers-modal-btn js-dessert-modal-open" type="button" aria-label="Подивитись детальну інформацію" data-id="${_id}">
                 <svg width="24" height="24" aria-hidden="true">
                     <use href="${bestsellersUrl}#icon-arrow_outward"></use>
                 </svg>

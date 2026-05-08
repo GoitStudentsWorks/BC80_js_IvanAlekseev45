@@ -33,12 +33,15 @@
 
 .swiper-bestsellers {
   width: 100%;
-  overflow: hidden;
+
   --swiper-pagination-color: var(--color-scheme-1-text);
   --swiper-pagination-bullet-inactive-color: rgb(8, 12, 12, 0.2);
   --swiper-pagination-bullet-inactive-opacity: 1;
   --swiper-pagination-bullet-size: 8px;
   --swiper-pagination-bullet-horizontal-gap: 8px;
+
+  overflow: clip;
+  overflow-clip-margin: 2px;
 }
 
 .bestsellers-list {
@@ -191,7 +194,6 @@
   width: 44px;
   height: 44px;
   stroke: currentColor;
-  cursor: pointer;
   transition:
     background 250ms linear,
     opacity 250ms linear;
