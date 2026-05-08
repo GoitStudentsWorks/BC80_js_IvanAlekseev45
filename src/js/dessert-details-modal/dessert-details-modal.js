@@ -1,4 +1,3 @@
-
 import { refs } from './refs.js';
 
 import spriteUrl from '../../img/sprite.svg?url';
