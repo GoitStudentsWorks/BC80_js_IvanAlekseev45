@@ -5,7 +5,7 @@
   flex-direction: column;
   gap: 0;
 
-  width: 375px;
+  max-width: 375px;
   padding: 64px 20px;
   margin: 0 auto;
 
@@ -92,13 +92,21 @@
 
 @media screen and (min-width: 768px) {
   .accordion-container {
-    width: 768px;
+    max-width: 768px;
     padding-right: 32px;
     padding-left: 32px;
   }
 
   .ac-title {
     max-width: none;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .accordion-container {
+    max-width: 1312px;
+    padding-right: 32px;
+    padding-left: 32px;
   }
 }
 
@@ -163,4 +171,7 @@
   font-size: 16px;
   line-height: 1.5;
   color: var(--color-scheme-1-text);
+}
+.ac .ac-trigger:focus {
+  color: inherit;
 }

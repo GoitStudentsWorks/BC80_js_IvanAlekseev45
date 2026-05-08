@@ -49,6 +49,10 @@
   color: var(--color-neutral-darkest);
   transition: background-color 250ms linear;
 }
+.main-title-link:hover,
+.main-title-link:focus {
+  background: var(--color-wewak-light);
+}
 
 .main-title-link:active {
   background-color: var(--color-wewak-dark);
