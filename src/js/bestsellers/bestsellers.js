@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Keyboard } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -63,8 +63,12 @@ export function renderBestsellers(array) {
   }
 
   swiper = new Swiper('.swiper-bestsellers', {
-    modules: [Navigation, Pagination],
+    modules: [Navigation, Pagination, Keyboard],
 
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true,
+    },
     slidesPerView: 1,
     slidesPerGroup: 1,
     spaceBetween: 16,
