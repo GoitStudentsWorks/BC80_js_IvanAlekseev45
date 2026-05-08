@@ -164,3 +164,6 @@
   line-height: 1.5;
   color: var(--color-scheme-1-text);
 }
+.ac .ac-trigger:focus {
+  color: inherit;
+}
