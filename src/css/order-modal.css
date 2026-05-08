@@ -1,0 +1,254 @@
+/* Order modal backdrop */
+
+.order-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px;
+
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Order modal */
+
+.order-modal {
+  position: relative;
+
+  width: 100%;
+  max-width: 335px;
+  max-height: calc(100vh - 32px);
+
+  overflow-y: auto;
+
+  padding: 64px 20px;
+
+  border-radius: 24px;
+
+  background-color: var(--color-scheme-1-background);
+}
+
+/* Close button */
+
+.order-modal__close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 24px;
+  height: 24px;
+  padding: 0;
+
+  border: none;
+  background-color: transparent;
+
+  color: var(--color-neutral-darkest);
+
+  cursor: pointer;
+
+  transition: color 250ms linear;
+}
+
+.order-modal__close-btn:hover,
+.order-modal__close-btn:focus {
+  color: var(--color-wewak);
+}
+
+.order-modal__close-btn:active {
+  color: var(--color-wewak);
+}
+
+.order-modal__close-icon {
+  display: block;
+
+  width: 24px;
+  height: 24px;
+
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+/* Title */
+
+.order-modal__title {
+  margin-bottom: 48px;
+font-family: var(--second-family);
+  font-weight: 700;
+font-size: 36px;
+line-height: 1.2;
+letter-spacing: -0.01em;
+text-align: center;
+color: var(--color-scheme-1-text);
+}
+
+/* Form */
+
+.order-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.order-form__label {
+  display: block;
+  margin-bottom: 24px;
+}
+
+.order-form__label-text {
+  display: block;
+  margin-bottom: 8px;
+
+  color: var(--color-neutral-darkest);
+
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Inputs + textarea */
+
+.order-form__input,
+.order-form__textarea {
+  width: 100%;
+
+  border: 2px solid var(--color-neutral-darkest);
+  background-color:  var(--opacity-transparent);
+
+  color: var(--color-neutral-darkest);
+
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+
+  outline: none;
+
+  transition: border-color 250ms linear;
+}
+
+.order-form__input {
+  height: 48px;
+  padding: 12px;
+
+  border-radius: 12px;
+}
+
+.order-form__textarea {
+  height: 180px;
+  padding: 12px;
+
+  border-radius: 12px;
+
+  resize: none;
+}
+
+.order-form__input::placeholder,
+.order-form__textarea::placeholder {
+  color: var(--opacity-neutral-darkest-60);
+}
+
+/* Focus / active state */
+
+.order-form__input:hover,
+.order-form__textarea:hover,
+.order-form__input:focus,
+.order-form__textarea:focus,
+.order-form__input:active,
+.order-form__textarea:active {
+  border-color: var(--color-wewak);
+}
+
+/* Error state */
+
+.order-form__input:invalid:not(:placeholder-shown),
+.order-form__textarea:invalid:not(:placeholder-shown) {
+  border: 2px solid var(--red);
+}
+
+/* Submit button */
+
+.order-form__submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 24px;
+
+  border: 2px solid transparent;
+  border-radius: 100px;
+
+  background-color: var(--color-wewak);
+  color: var(--color-neutral-darkest);
+  
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+
+  cursor: pointer;
+
+  transition: border-color 250ms linear, background-color 250ms linear;
+}
+
+.order-form__submit-btn:hover,
+.order-form__submit-btn:focus {
+  border-color: var(--color-neutral-darkest);
+  background-color: transparent;
+}
+
+.order-form__submit-btn:active {
+  border-color: var(--color-neutral-darkest);
+  background-color: var(--color-wewak-light);
+}
+
+/* Tablet from 768px */
+
+@media only screen and (min-width: 768px) {
+  .order-modal-backdrop {
+    padding: 32px;
+  }
+
+  .order-modal {
+    max-width: 704px;
+    padding: 64px 32px;
+  }
+
+  .order-modal__title {
+    font-size: 36px;
+  }
+
+  .order-form__submit-btn {
+    width: 344px;
+    height: 44px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Desktop from 1440px */
+
+@media only screen and (min-width: 1440px) {
+  .order-modal-backdrop {
+    padding: 64px;
+  }
+
+  .order-modal {
+    max-width: 640px;
+    padding: 64px;
+  }
+
+  .order-form__submit-btn {
+    width: 196px;
+  }
+}
+
+.custom-toast {
+  border-radius: 16px !important;
+  overflow: hidden;
+}
