@@ -4,7 +4,7 @@
       <!-- Заголовок секції. Тихо, чисто, по макету. -->
       <h2 class="about-us__title">Про Нашу Майстерню</h2>
 
-      <!-- Короткий опис майстерні без зайвого шуму. -->
+      <!-- Короткий опис. -->
       <p class="about-us__text">
         У нашій 'Солодкій Майстерні' ми створюємо неповторні солодкі шедеври, що
         приносять радість та задоволення. Наша місія — пропонувати високоякісні
@@ -141,24 +141,32 @@
           class="about-us__button about-us__button--prev"
           type="button"
           aria-label="Попередній слайд"
+          tabindex="0"
         >
-          <img
+          <svg
             class="about-us__button-icon"
-            src="./img/about-us/about-us-arrow.svg.svg"
-            alt=""
-          />
+            width="24"
+            height="24"
+            aria-hidden="true"
+          >
+            <use href="./img/sprite.svg#icon-arrow_back"></use>
+          </svg>
         </button>
 
         <button
           class="about-us__button about-us__button--next"
           type="button"
           aria-label="Наступний слайд"
+          tabindex="0"
         >
-          <img
-            class="about-us__button-icon about-us__button-icon--next"
-            src="./img/about-us/about-us-arrow.svg.svg"
-            alt=""
-          />
+          <svg
+            class="about-us__button-icon"
+            width="24"
+            height="24"
+            aria-hidden="true"
+          >
+            <use href="./img/sprite.svg#icon-arrow_forward"></use>
+          </svg>
         </button>
       </div>
 
