@@ -1,5 +1,4 @@
 @import 'modern-normalize';
-@import 'https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap';
 
 @import url('./reset.css');
 @import url('./base.css');
@@ -19,3 +18,54 @@
 @import url('./dessert-details-modal.css');
 @import url('./order-modal.css');
 @import url('./cursor.css');
+
+@font-face {
+  font-family: 'Comfortaa';
+
+  src:
+    url('../fonts/Comfortaa-Bold.woff2') format('woff2'),
+    url('../fonts/Comfortaa-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  src:
+    url('../fonts/WorkSans-Bold.woff2') format('woff2'),
+    url('../fonts/WorkSans-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  src:
+    url('../fonts/WorkSans-Medium.woff2') format('woff2'),
+    url('../fonts/WorkSans-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  src:
+    url('../fonts/WorkSans-Regular.woff2') format('woff2'),
+    url('../fonts/WorkSans-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  src:
+    url('../fonts/WorkSans-SemiBold.woff2') format('woff2'),
+    url('../fonts/WorkSans-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
