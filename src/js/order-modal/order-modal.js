@@ -1,4 +1,5 @@
 import { refs } from './refs.js';
+import spriteUrl from '../../img/sprite.svg?url';
 
 import {
   onBackdropClick,
@@ -46,7 +47,7 @@ export const openOrderModal = dessertId => {
           height="24"
           aria-hidden="true"
         >
-          <use href="${import.meta.env.BASE_URL}img/sprite.svg#icon-close"></use>
+          <use href="${spriteUrl}#icon-close"></use>
         </svg>
       </button>
 
