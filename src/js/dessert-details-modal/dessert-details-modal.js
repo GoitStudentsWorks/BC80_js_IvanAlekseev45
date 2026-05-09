@@ -1,7 +1,7 @@
 import { refs } from './refs.js';
 
 import spriteUrl from '../../img/sprite.svg?url';
-import ratingIconsUrl from '../../img/star-rating.icons.svg?url';
+import ratingIconsUrl from '../../img/star-rating.icons.svg?no-inline';
 
 import {
   onOpenDessertModalClick,
