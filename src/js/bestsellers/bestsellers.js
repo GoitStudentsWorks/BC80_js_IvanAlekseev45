@@ -10,6 +10,7 @@ import { refsBestsellers } from './refs';
 import { onInitBestsellers } from './handlers';
 
 document.addEventListener('DOMContentLoaded', onInitBestsellers);
+refsBestsellers.buttonWrapper.style.display = 'none';
 
 let swiper = null;
 
@@ -37,47 +38,46 @@ function injectLoaders() {
   refsBestsellers.bestsellersList
     .querySelectorAll('.bestsellers-image')
     .forEach(img => {
-      const showImage = () => {
-        loaderEl.remove();
-        img.style.visibility = 'visible';
-      };
-
       if (img.complete && img.naturalWidth !== 0) {
-        img.style.visibility = 'visible';
+        img.style.display = 'block';
         return;
       }
 
       const loaderEl = document.createElement('div');
-      loaderEl.className = 'loader-sizes-skeleton';
+      loaderEl.className = 'bestsellers-image-loader-dynamic';
       loaderEl.setAttribute('aria-hidden', 'true');
-      loaderEl.style.cssText =
-        'position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index:1;';
       loaderEl.innerHTML = `
-      <div class='loader bestsellers-image-loader-dynamic'>
-        <div class="cup">
-          <div class="cup-handle"></div>
-          <div class="smoke one"></div>
-          <div class="smoke two"></div>
-          <div class="smoke three"></div>
-        </div>
-        <div class="load">..........................</div>
+        <div class='loader'>
+          <div class="cup">
+            <div class="cup-handle"></div>
+            <div class="smoke one"></div>
+            <div class="smoke two"></div>
+            <div class="smoke three"></div>
+          </div>
+          <div class="load">..........................</div>
         </div>
       `;
 
-      img.closest('.bestsellers-top').prepend(loaderEl);
+      img
+        .closest('.bestsellers-list-item')
+        .insertAdjacentElement('afterbegin', loaderEl);
 
-      img.addEventListener('load', showImage);
-      img.addEventListener('error', showImage);
+      const showImage = () => {
+        loaderEl.remove();
+        img.style.display = 'block';
+      };
+
+      img.addEventListener('load', showImage, { once: true });
+      img.addEventListener('error', showImage, { once: true });
     });
 }
-
 export function renderBestsellers(array) {
   const markup = array
     .map(
       ({ image, category, description, name, price, _id }) =>
         `<li class="bestsellers-list-item swiper-slide">
           <div class="bestsellers-top">
-            <img class="bestsellers-image" src="${image}" alt="${name}"  style="visibility:hidden"/>
+            <img class="bestsellers-image" src="${image}" alt="${name}"  style="display:none"/>
             <p class="bestsellers-category">${category.name}</p>
             <h3 class="bestsellers-name">${name}</h3>
             <p class="bestsellers-description">${description}</p>
@@ -141,6 +141,7 @@ export function renderBestsellers(array) {
       init() {
         equalizeSlideHeights();
         injectLoaders();
+        refsBestsellers.buttonWrapper.style.display = 'flex';
       },
       resize() {
         equalizeSlideHeights();
