@@ -63,9 +63,14 @@ export const onCloseBtnClick = () => {
   closeDessertModal();
 };
 
-export const onOrderBtnClick = () => {
+export const onOrderBtnClick = event => {
+  const dessertId = event.currentTarget.dataset.dessertId;
+
   closeDessertModal();
 
-  const orderModalOpenEvent = new CustomEvent('open-order-modal');
+  const orderModalOpenEvent = new CustomEvent('open-order-modal', {
+    detail: { dessertId },
+  });
+
   document.dispatchEvent(orderModalOpenEvent);
 };

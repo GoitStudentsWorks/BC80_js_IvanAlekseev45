@@ -336,11 +336,14 @@
   line-height: 1.5;
   color: var(--color-neutral-darkest);
 
-  transition: background 250ms linear;
+  transition:
+    background 250ms linear,
+    border 250ms linear;
 
   &:hover,
   &:focus-visible {
-    background: var(--color-wewak-light);
+    border: 2px solid var(--color-neutral-darkest);
+    background: transparent;
   }
 }
 
