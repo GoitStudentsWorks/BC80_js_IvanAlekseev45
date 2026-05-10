@@ -21,6 +21,14 @@ const initFeedbackSwiper = () => {
       dynamicBullets: true,
       dynamicMainBullets: 1,
     },
+    on: {
+      init() {
+        equalizeSlideHeights();
+      },
+      resize() {
+        equalizeSlideHeights();
+      },
+    },
     keyboard: {
       enabled: true,
       onlyInViewport: true,
@@ -117,3 +125,23 @@ export const onInitFeedbacksPage = async () => {
     refsFeedback.loader.classList.add('is-hidden');
   }
 };
+
+function equalizeSlideHeights() {
+  const items = document.querySelectorAll('.feedback-item');
+
+  items.forEach(item => {
+    item.style.height = 'auto';
+    item.style.display = 'flex';
+    item.style.flexDirection = 'column';
+    item.style.justifyContent = 'space-between';
+  });
+
+  requestAnimationFrame(() => {
+    let maxHeight = 0;
+    items.forEach(item => {
+      if (item.offsetHeight > maxHeight) maxHeight = item.offsetHeight;
+    });
+    items.forEach(item => (item.style.height = maxHeight + 'px'));
+    if (swiper) swiper.update();
+  });
+}
