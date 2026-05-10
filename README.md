@@ -57,9 +57,7 @@
 
 <div align="center">
 
-> 💡 _Скріншот головної сторінки буде додано тут._
->
-> `<img src="./src/img/preview.png" alt="Solodka Maisternia preview" width="800"/>`
+<img src="/src/img/preview.png" alt="Solodka Maisternia preview" width="800"/>
 
 </div>
 
@@ -257,15 +255,15 @@ Workflow знаходиться у файлі `.github/workflows/`.
 
 ## 👥 Команда
 
-> _Список учасників буде оновлено командою._
-
-| Розробник     | Роль      | GitHub                                               |
-| ------------- | --------- | ---------------------------------------------------- | --- |
-| Ivan Alekseev | Team Lead | [@IvanAlekseev45](https://github.com/IvanAlekseev45) |
-| Ivan Alekseev | Team Lead | [@IvanAlekseev45](https://github.com/IvanAlekseev45) |     |
-| Ivan Alekseev | Team Lead | [@IvanAlekseev45](https://github.com/IvanAlekseev45) |     |
-| Ivan Alekseev | Team Lead | [@IvanAlekseev45](https://github.com/IvanAlekseev45) |
-| _ім'я_        | _роль_    | [_@github_](#)                                       |
+| Розробник         | Роль      | GitHub                                                     |
+| ----------------- | --------- | ---------------------------------------------------------- |
+| Ivan Alekseev     | Team Lead | [@IvanAlekseev45](https://github.com/IvanAlekseev45)       |
+| Dmytro Levchenko  | Developer | [@d-levchenko](https://github.com/d-levchenko)             |
+| Viktoriia Dmytryk | Developer | [@viktoriia-dmytryk](https://github.com/viktoriia-dmytryk) |
+| Romario Korzun    | Scram     | [@mrkorzun](https://github.com/mrkorzun)                   |
+| Alena Shykova     | Developer | [@igra26](https://github.com/Tigra26)                      |
+| Daniil_Renhevych  | Developer | [@Huliga101](https://github.com/Huliga101)                 |
+| Julie Babaeva     | Developer | [@JulieBabaeva](https://github.com/JulieBabaeva)           |
 
 ---
 
