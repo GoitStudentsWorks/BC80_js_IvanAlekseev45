@@ -1,4 +1,4 @@
-import feedbacksUrl from '../../img/star-rating.icons.svg';
+import feedbacksUrl from '../../img/star-rating.icons.svg?raw';
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 import axios from 'axios';
@@ -56,9 +56,9 @@ const reviewTemplate = review => {
             .map(
               () => `
             <div class="star">
-              <svg class="star-empty"><use href="${feedbacksUrl}#star-empty"></use></svg>
-              <svg class="star-half"><use href="${feedbacksUrl}#star-half"></use></svg>
-              <svg class="star-filled"><use href="${feedbacksUrl}#star-filled"></use></svg>
+              <svg class="star-empty"><use href="#star-empty"></use></svg>
+              <svg class="star-half"><use href="#star-half"></use></svg>
+              <svg class="star-filled"><use href="#star-filled"></use></svg>
             </div>
           `
             )
@@ -92,6 +92,12 @@ export const getFeedbacks = async initSwiper => {
 };
 
 export const onInitFeedbacksPage = async () => {
+  if (!document.querySelector('#stars-sprite')) {
+    document.body.insertAdjacentHTML(
+      'beforeend',
+      `<div id="stars-sprite" style="display:none">${feedbacksUrl}</div>`
+    );
+  }
   refsFeedback.loader.classList.remove('is-hidden');
   try {
     const feedbacks = await getFeedbacks();
