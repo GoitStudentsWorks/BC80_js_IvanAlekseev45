@@ -283,4 +283,6 @@
   .swiper-pagination.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
   left: 0;
   transform: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
