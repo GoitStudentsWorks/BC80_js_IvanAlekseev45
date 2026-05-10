@@ -1,3 +1,4 @@
+import feedbacksUrl from '../../img/star-rating.icons.svg';
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 import axios from 'axios';
@@ -18,7 +19,11 @@ const initFeedbackSwiper = () => {
       el: '.swiper-pagination',
       clickable: true,
       dynamicBullets: true,
-      dynamicMainBullets: 2,
+      dynamicMainBullets: 1,
+    },
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true,
     },
     navigation: {
       nextEl: '.button-next',
@@ -51,9 +56,9 @@ const reviewTemplate = review => {
             .map(
               () => `
             <div class="star">
-              <svg class="star-empty"><use href="./img/star-rating.icons.svg#star-empty"></use></svg>
-              <svg class="star-half"><use href="./img/star-rating.icons.svg#star-half"></use></svg>
-              <svg class="star-filled"><use href="./img/star-rating.icons.svg#star-filled"></use></svg>
+              <svg class="star-empty"><use href="${feedbacksUrl}#star-empty"></use></svg>
+              <svg class="star-half"><use href="${feedbacksUrl}#star-half"></use></svg>
+              <svg class="star-filled"><use href="${feedbacksUrl}#star-filled"></use></svg>
             </div>
           `
             )
@@ -93,9 +98,7 @@ export const onInitFeedbacksPage = async () => {
     const markup = feedbacks.map(item => reviewTemplate(item)).join('');
     refsFeedback.reviewsList.innerHTML = markup;
 
-    requestAnimationFrame(() => {
-      initFeedbackSwiper();
-    });
+    initFeedbackSwiper();
   } catch (err) {
     iziToast.error({
       message: 'Йой, щось пішло не так, спробуйте пізніше.',
