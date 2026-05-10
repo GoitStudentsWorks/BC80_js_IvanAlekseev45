@@ -1,0 +1,93 @@
+.burger-menu {
+  width: 100%;
+  height: 100vh;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  transform: translateX(100%);
+  transition: transform 250ms linear;
+}
+
+.burger-menu.is-open {
+  transform: translateX(0);
+}
+
+.burger-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.burger-thumb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-link-burger {
+  width: 158px;
+  height: 72px;
+  transition: transform 250ms linear;
+}
+
+.close-burger-btn {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: transparent;
+  border: none;
+  transition: transform 250ms linear;
+}
+
+.burger-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.burger-nav-item {
+  padding: 12px 0px;
+  width: 335px;
+  height: 48px;
+}
+
+.burger-nav-link {
+  transition: transform 250ms linear;
+}
+.burger-order-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 36px;
+  width: 335px;
+  height: 37px;
+  border: 1px solid var(--color-wewak);
+  border-radius: 100px;
+  padding: 8px 20px;
+  width: 335px;
+  height: 40px;
+  background: var(--color-wewak);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--color-neutral-darkest);
+  transition: 250ms linear;
+}
+
+.burger-order-btn:hover,
+.burger-order-btn:focus {
+  background-color: transparent;
+  border: 2px solid var(--color-neutral-darkest);
+}
+
+.burger-order-btn:active {
+  background-color: var(--color-wewak-light);
+}
+
+.no-scroll {
+  overflow: hidden;
+}
