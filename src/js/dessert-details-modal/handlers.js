@@ -23,6 +23,9 @@ export const onOpenDessertModalClick = async event => {
     iziToast.error({
       message: 'Не вдалося визначити десерт. Спробуйте ще раз.',
       position: 'topRight',
+      color: '#F5B6B6',
+      messageColor: '#000000',
+      class: 'custom-toast',
     });
 
     return;
@@ -39,6 +42,9 @@ export const onOpenDessertModalClick = async event => {
     iziToast.error({
       message: 'Не вдалося завантажити інформацію про десерт. Спробуйте ще раз.',
       position: 'topRight',
+      color: '#FFC9C9',
+      messageColor: '#000000',
+      class: 'custom-toast',
     });
 
     console.log(error);

@@ -4,10 +4,13 @@
   position: fixed;
   inset: 0;
   z-index: 1100;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   padding: 16px;
+
   background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -15,12 +18,17 @@
 
 .order-modal {
   position: relative;
+
   width: 100%;
   max-width: 335px;
   max-height: calc(100vh - 32px);
+
   overflow-y: auto;
+
   padding: 64px 20px;
+
   border-radius: 24px;
+
   background-color: var(--color-scheme-1-background);
 }
 
@@ -30,16 +38,22 @@
   position: absolute;
   top: 16px;
   right: 16px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   width: 24px;
   height: 24px;
   padding: 0;
+
   border: none;
   background-color: transparent;
+
   color: var(--color-neutral-darkest);
+
   cursor: pointer;
+
   transition: color 250ms linear;
 }
 
@@ -54,8 +68,10 @@
 
 .order-modal__close-icon {
   display: block;
+
   width: 24px;
   height: 24px;
+
   stroke: currentColor;
   fill: currentColor;
 }
@@ -63,13 +79,15 @@
 /* Title */
 
 .order-modal__title {
-  margin-bottom: 48px;
+  margin: 0 0 48px;
+
   font-family: var(--second-family);
   font-weight: 700;
   font-size: 36px;
   line-height: 1.2;
   letter-spacing: -0.01em;
   text-align: center;
+
   color: var(--color-scheme-1-text);
 }
 
@@ -82,15 +100,21 @@
 
 .order-form__label {
   display: block;
+
   margin-bottom: 24px;
 }
 
 .order-form__label-text {
   display: block;
+
   margin-bottom: 8px;
-  color: var(--color-neutral-darkest);
+
+  font-family: var(--font-family);
+  font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
+
+  color: var(--color-neutral-darkest);
 }
 
 /* Inputs + textarea */
@@ -98,30 +122,45 @@
 .order-form__input,
 .order-form__textarea {
   width: 100%;
+
   border: 2px solid var(--color-neutral-darkest);
-  background-color:  var(--opacity-transparent);
-  color: var(--color-neutral-darkest);
+  background-color: var(--opacity-transparent);
+
+  font-family: var(--font-family);
+  font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
+
+  color: var(--color-neutral-darkest);
+
   outline: none;
+
   transition: border-color 250ms linear;
 }
 
 .order-form__input {
   height: 48px;
   padding: 12px;
+
   border-radius: 12px;
 }
 
 .order-form__textarea {
   height: 180px;
   padding: 12px;
+
   border-radius: 12px;
+
   resize: none;
 }
 
 .order-form__input::placeholder,
 .order-form__textarea::placeholder {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+
   color: var(--opacity-neutral-darkest-60);
 }
 
@@ -149,17 +188,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
   width: 100%;
   min-height: 48px;
   padding: 12px 24px;
+
   border: 2px solid transparent;
   border-radius: 100px;
+
   background-color: var(--color-wewak);
   color: var(--color-neutral-darkest);
+
+  font-family: var(--font-family);
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
+
   cursor: pointer;
+
   transition: border-color 250ms linear, background-color 250ms linear;
 }
 
@@ -172,6 +218,41 @@
 .order-form__submit-btn:active {
   border-color: var(--color-neutral-darkest);
   background-color: var(--color-wewak-light);
+}
+
+/* IziToast */
+
+.iziToast.custom-toast {
+  border-radius: 16px !important;
+  overflow: hidden;
+
+  font-family: var(--font-family) !important;
+}
+
+.iziToast.custom-toast .iziToast-body {
+  font-family: var(--font-family) !important;
+}
+
+.iziToast.custom-toast .iziToast-message {
+  font-family: var(--font-family) !important;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.iziToast.custom-toast .iziToast-title {
+  font-family: var(--font-family) !important;
+  font-weight: 600;
+}
+
+.iziToast.custom-toast .iziToast-icon {
+  color: #ffffff !important;
+}
+
+.iziToast.custom-toast svg,
+.iziToast.custom-toast svg path {
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
 }
 
 /* Tablet from 768px */
@@ -213,9 +294,4 @@
   .order-form__submit-btn {
     width: 196px;
   }
-}
-
-.custom-toast {
-  border-radius: 16px !important;
-  overflow: hidden;
 }
