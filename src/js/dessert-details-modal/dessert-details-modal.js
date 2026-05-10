@@ -1,6 +1,7 @@
-// import 'css-star-rating/css/star-rating.min.css';
-
 import { refs } from './refs.js';
+
+import spriteUrl from '../../img/sprite.svg?url';
+import ratingIconsSprite from '../../img/star-rating.icons.svg?raw';
 
 import {
   onOpenDessertModalClick,
@@ -10,9 +11,27 @@ import {
   onOrderBtnClick,
 } from './handlers.js';
 
+import '../order-modal/order-modal.js';
+
 let modalRoot = null;
 
+const injectRatingIconsSprite = () => {
+  if (document.querySelector('.js-rating-icons-sprite')) {
+    return;
+  }
+
+  const spriteContainer = document.createElement('div');
+
+  spriteContainer.classList.add('js-rating-icons-sprite');
+  spriteContainer.style.display = 'none';
+  spriteContainer.innerHTML = ratingIconsSprite;
+
+  refs.body.prepend(spriteContainer);
+};
+
 export const initDessertModal = () => {
+  injectRatingIconsSprite();
+
   document.addEventListener('click', onOpenDessertModalClick);
 };
 
@@ -33,7 +52,7 @@ export const openDessertModal = () => {
           height="24"
           aria-hidden="true"
         >
-          <use href="/img/sprite.svg#icon-close"></use>
+          <use href="${spriteUrl}#icon-close"></use>
         </svg>
       </button>
 
@@ -156,13 +175,13 @@ const createStarsMarkup = rate => {
           () => `
             <div class="star">
               <svg class="star-empty">
-                <use href="/img/star-rating.icons.svg#star-empty"></use>
+                <use href="#star-empty"></use>
               </svg>
               <svg class="star-half">
-                <use href="/img/star-rating.icons.svg#star-half"></use>
+                <use href="#star-half"></use>
               </svg>
               <svg class="star-filled">
-                <use href="/img/star-rating.icons.svg#star-filled"></use>
+                <use href="#star-filled"></use>
               </svg>
             </div>
           `

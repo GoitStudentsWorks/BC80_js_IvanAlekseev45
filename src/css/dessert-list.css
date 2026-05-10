@@ -77,6 +77,12 @@
   border: none;
   background-color: transparent;
 
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-neutral-darkest);
+
   @media screen and (max-width: 1439px) {
     &.active__btn {
       border-bottom: 1px solid var(--color-neutral-darkest);
@@ -320,7 +326,7 @@
 .dessert-load-more-btn {
   border: 1px solid var(--color-wewak);
   border-radius: 100px;
-  width: 198px;
+  width: 335px;
   height: 44px;
   margin: 0 auto;
 
@@ -336,11 +342,22 @@
   line-height: 1.5;
   color: var(--color-neutral-darkest);
 
-  transition: background 250ms linear;
+  @media screen and (min-width: 768px) {
+    width: 344px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 198px;
+  }
+
+  transition:
+    background 250ms linear,
+    border 250ms linear;
 
   &:hover,
   &:focus-visible {
-    background: var(--color-wewak-light);
+    border: 2px solid var(--color-neutral-darkest);
+    background: transparent;
   }
 }
 

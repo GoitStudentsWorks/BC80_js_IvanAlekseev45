@@ -14,12 +14,14 @@
 .about-us__title {
   margin: 0 0 16px;
 
-  font-weight: 600;
-  font-size: 36px;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  text-align: center;
-  color: var(--color-scheme-1-text);
+  font-family: var(--second-family);
+font-weight: 700;
+font-size: 48px;
+line-height: 1.2;
+letter-spacing: -0.01em;
+text-align: center;
+color: var(--color-scheme-1-text);
+
 }
 
 .about-us__text {
@@ -27,10 +29,12 @@
   max-width: 335px;
   margin: 0 0 32px;
 
-  font-size: 16px;
-  line-height: 1.5;
-  text-align: center;
-  color: var(--color-scheme-1-text);
+  font-family: var(--font-family);
+font-weight: 400;
+font-size: 18px;
+line-height: 1.5;
+text-align: center;
+color: var(--color-scheme-1-text);
 }
 
 /* Gallery */
@@ -86,7 +90,7 @@
 
   .about-us__item {
     width: 100%;
-    height: 220px;
+    height: 249px;
   }
 }
 
@@ -107,7 +111,7 @@
   }
 
   .about-us__item {
-    height: 220px;
+    height: 252px;
   }
 
   /* Slider navigation */
@@ -124,21 +128,31 @@
     height: 44px;
     padding: 6px;
 
-    border: 1px solid var(--color-scheme-1-text);
-    border-radius: 50%;
-    background-color: var(--color-scheme-1-background);
+    border: 2px solid var(--color-scheme-1-border);
+    border-radius: 100px;
+    background-color: var(--color-scheme-1-foreground);
 
     cursor: pointer;
     transform: translateY(-50%);
 
     transition:
-      background-color 250ms ease,
-      opacity 250ms ease;
+      background-color 250ms linear,
+      border-color 250ms linear,
+      opacity 250ms linear;
   }
 
   .about-us__button:hover,
+  .about-us__button:focus-visible {
+    background-color: var(--color-wewak);
+    border-color: var(--color-scheme-1-border);
+  }
+
   .about-us__button:focus {
-    background-color: var(--color-scheme-1-foreground);
+    outline: none;
+  }
+
+  .about-us__button:active {
+    background-color: var(--color-wewak-dark);
   }
 
   .about-us__button--prev {
@@ -151,15 +165,11 @@
 
   .about-us__button-icon {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
 
-    object-fit: contain;
-    transform: scale(1.55);
-  }
-
-  .about-us__button-icon--next {
-    transform: rotate(180deg) scale(1.55);
+    fill: currentColor;
   }
 
   .about-us__button.swiper-button-disabled {
@@ -209,7 +219,7 @@
 /* Desktop */
 @media screen and (min-width: 1440px) {
   .about-us__text {
-    max-width: 768px;
+    max-width: 704px;
   }
 
   .about-us__slider {
@@ -217,7 +227,7 @@
   }
 
   .about-us__item {
-    height: 260px;
+    height: 478px;
   }
 
   .about-us__button--prev {

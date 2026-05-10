@@ -9,7 +9,7 @@ const renderCategory = async () => {
 
     const allBtn = `
     <li class="dessert-category__item">
-        <button class="dessert-category__btn active__btn" type="button" data-id="all">Всі десерти</button>
+        <button class="dessert-category__btn active__btn" type="button" data-id="all" aria-label="Перейти до всіх категорій">Всі десерти</button>
     </li>
   `;
 
@@ -17,7 +17,7 @@ const renderCategory = async () => {
       .map(({ _id, name }) => {
         return `
         <li class="dessert-category__item">
-            <button class="dessert-category__btn" type="button" data-id="${_id}">${name}</button>
+            <button class="dessert-category__btn" type="button" data-id="${_id}" aria-label="Перейти до категорії ${name}">${name}</button>
         </li>
       `;
       })
