@@ -11,7 +11,6 @@ a *,
 .swiper-pagination-bullet,
 [role='button'],
 [role='button'] * {
-  cursor:
-    url('../img/navigation-red.png') 4 0,
+ cursor: url('../img/navigation-red.png') 9 3,
     pointer !important;
 }

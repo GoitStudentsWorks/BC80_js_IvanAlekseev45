@@ -10,6 +10,7 @@ export async function onInitBestsellers() {
 
   try {
     const { desserts } = await getBestsellers();
+
     renderBestsellers(desserts);
   } catch (err) {
     iziToast.error({

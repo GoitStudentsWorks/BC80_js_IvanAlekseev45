@@ -3,9 +3,22 @@
     <h2 class="bestsellers-title">Наші бестселлери</h2>
 
     <div class="bestseller-loader-wrapper">
+      <span class="span-best-load">
+        <div class="loader bestsellers-loader" aria-hidden="true" role="status">
+          <div class="cup">
+            <div class="cup-handle"></div>
+            <div class="smoke one"></div>
+            <div class="smoke two"></div>
+            <div class="smoke three"></div>
+          </div>
+          <div class="load">..........................</div>
+        </div>
+      </span>
+
       <div class="swiper-bestsellers">
         <ul class="bestsellers-list swiper-wrapper"></ul>
-        <div class="paginate-box">
+
+        <nav class="paginate-box" aria-label="Навігація по слайдах">
           <div class="swiper-pagination"></div>
           <div class="bestsellers-nav-btn">
             <button
@@ -37,17 +50,7 @@
               </svg>
             </button>
           </div>
-        </div>
-      </div>
-
-      <div class="loader bestsellers-loader" aria-hidden="true">
-        <div class="cup">
-          <div class="cup-handle"></div>
-          <div class="smoke one"></div>
-          <div class="smoke two"></div>
-          <div class="smoke three"></div>
-        </div>
-        <div class="load">..........................</div>
+        </nav>
       </div>
     </div>
   </div>
