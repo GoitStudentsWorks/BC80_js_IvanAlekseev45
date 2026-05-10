@@ -31,8 +31,8 @@ export const onOrderFormSubmit = async event => {
     iziToast.error({
       message: 'Не вдалося визначити десерт для замовлення',
       position: 'topRight',
-      color: '#FA5053',
-      messageColor: '#ffffff',
+      color: '#FFC9C9',
+      messageColor: '#000000',
       class: 'custom-toast',
     });
 
@@ -121,8 +121,8 @@ export const onOrderFormSubmit = async event => {
     iziToast.success({
       message: 'Замовлення успішно відправлено!',
       position: 'topRight',
-      color: '#24922E',
-      messageColor: '#ffffff',
+      color: '#aefcd2',
+      messageColor: '#000000',
       class: 'custom-toast',
     });
 
@@ -138,8 +138,8 @@ export const onOrderFormSubmit = async event => {
         error.response?.data?.message ||
         'Не вдалося надіслати заявку. Спробуйте ще раз.',
       position: 'topRight',
-      color: '#FA5053',
-      messageColor: '#ffffff',
+      color: '#f5b6b6',
+      messageColor: '#000000',
       class: 'custom-toast',
     });
   }
