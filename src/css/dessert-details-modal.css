@@ -239,3 +239,7 @@
     height: 52px;
   }
 }
+
+.dessert-modal__rating .star-container {
+  margin: 0 !important;
+}
