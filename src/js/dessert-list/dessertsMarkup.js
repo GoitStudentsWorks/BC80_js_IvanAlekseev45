@@ -28,7 +28,7 @@ const dessertsMarkup = desserts => {
         </div>
         <div class="dessert-list__wrapper__bottom">
           <p class="dessert-list__price">${price} грн</p>
-          <button class="dessert-list__btn js-dessert-modal-open" type="button" data-id="${_id}">
+          <button class="dessert-list__btn js-dessert-modal-open" type="button" data-id="${_id} aria-label="Подивитись детальну інформацію">
             <svg width="24" height="24" class="dessert-list__icon" aria-hidden="true">
               <use href="${spriteUrl}#icon-arrow_outward"></use>
             </svg>
