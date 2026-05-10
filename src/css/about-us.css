@@ -4,6 +4,7 @@
 }
 
 .about-us__content {
+  margin-bottom: 48px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,7 +13,7 @@
 }
 
 .about-us__title {
-  margin: 0 0 16px;
+  margin:0 0 24px;
 
   font-family: var(--second-family);
 font-weight: 700;
@@ -26,11 +27,11 @@ color: var(--color-scheme-1-text);
 
 .about-us__text {
   width: 100%;
-  max-width: 335px;
+  max-width: 768px;
   margin: 0 0 32px;
 
   font-family: var(--font-family);
-font-weight: 400;
+ font-weight: 400;
 font-size: 18px;
 line-height: 1.5;
 text-align: center;
@@ -42,7 +43,7 @@ color: var(--color-scheme-1-text);
   position: relative;
 
   width: 100%;
-  max-width: 335px;
+  max-width: 1312px;
 }
 
 .about-us__viewport {
@@ -97,13 +98,11 @@ color: var(--color-scheme-1-text);
 /* Tablet */
 @media screen and (min-width: 768px) {
   .about-us__title {
-    margin-bottom: 24px;
     font-size: 48px;
   }
 
   .about-us__text {
     max-width: 704px;
-    margin-bottom: 40px;
   }
 
   .about-us__slider {
@@ -124,9 +123,9 @@ color: var(--color-scheme-1-text);
     align-items: center;
     justify-content: center;
 
-    width: 44px;
-    height: 44px;
-    padding: 6px;
+    width: 48px;
+    height: 48px;
+    padding: 0;
 
     border: 2px solid var(--color-scheme-1-border);
     border-radius: 100px;
@@ -218,12 +217,13 @@ color: var(--color-scheme-1-text);
 
 /* Desktop */
 @media screen and (min-width: 1440px) {
+ 
   .about-us__text {
-    max-width: 704px;
-  }
+  max-width: 768px;
+} 
 
   .about-us__slider {
-    max-width: 1128px;
+    max-width: 1312px;
   }
 
   .about-us__item {

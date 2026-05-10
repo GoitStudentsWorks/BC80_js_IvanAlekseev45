@@ -5,10 +5,9 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-let aboutUsSwiper = null;
+let aboutUsSwiper;
 
-// Create slider for tablet and desktop
-const createAboutUsSwiper = () => {
+const initAboutUsSwiper = () => {
   aboutUsSwiper = new Swiper('.about-us__viewport', {
     modules: [Navigation, Pagination],
 
@@ -18,8 +17,8 @@ const createAboutUsSwiper = () => {
     watchOverflow: false,
 
     navigation: {
-      nextEl: '.about-us__button--next',
       prevEl: '.about-us__button--prev',
+      nextEl: '.about-us__button--next',
     },
 
     pagination: {
@@ -37,33 +36,32 @@ const createAboutUsSwiper = () => {
 
       1440: {
         slidesPerView: 2,
-        spaceBetween: 32,
+        spaceBetween: 24,
       },
     },
   });
 };
 
-// Remove slider on mobile
 const destroyAboutUsSwiper = () => {
   if (!aboutUsSwiper) return;
 
   aboutUsSwiper.destroy(true, true);
-  aboutUsSwiper = null;
+  aboutUsSwiper = undefined;
 };
 
-// Switch slider mode by screen width
-const checkAboutUsSwiper = () => {
-  const isTabletOrDesktop = window.innerWidth >= 768;
+const toggleAboutUsSwiper = () => {
+  const isMobile = window.innerWidth < 768;
 
-  if (isTabletOrDesktop && !aboutUsSwiper) {
-    createAboutUsSwiper();
-  }
-
-  if (!isTabletOrDesktop && aboutUsSwiper) {
+  if (isMobile) {
     destroyAboutUsSwiper();
+    return;
+  }
+
+  if (!aboutUsSwiper) {
+    initAboutUsSwiper();
   }
 };
 
-checkAboutUsSwiper();
+toggleAboutUsSwiper();
 
-window.addEventListener('resize', checkAboutUsSwiper);
+window.addEventListener('resize', toggleAboutUsSwiper);
