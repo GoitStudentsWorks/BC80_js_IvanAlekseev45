@@ -225,7 +225,7 @@
   overflow: clip;
   overflow-clip-margin: 2px;
 }
-.swiper-wrapper {
+.feedback-swipper {
   margin-bottom: 32px;
 
   @media only screen and (min-width: 768px) {
