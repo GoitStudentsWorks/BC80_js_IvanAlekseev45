@@ -144,6 +144,7 @@ function equalizeSlideHeights() {
       if (item.offsetHeight > maxHeight) maxHeight = item.offsetHeight;
     });
     items.forEach(item => (item.style.height = maxHeight + 'px'));
+
     if (swiper) swiper.update();
   });
 }
