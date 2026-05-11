@@ -233,24 +233,12 @@
 
     & .dessert-list__image {
       border-radius: 8px;
-      width: 303px;
-      height: 227px;
       margin-bottom: 16px;
       display: none;
       transition: display 250ms linear;
 
       &.img__is-loaded {
         display: block;
-      }
-
-      @media screen and (min-width: 768px) {
-        width: 312px;
-        height: 234px;
-      }
-
-      @media screen and (min-width: 1440px) {
-        width: 278px;
-        height: 209px;
       }
     }
 
