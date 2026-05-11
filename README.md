@@ -263,7 +263,7 @@ Workflow знаходиться у файлі `.github/workflows/`.
 | Daniil_Renhevych   | Developer    | [@Huliga101](https://github.com/Huliga101)                 |
 | Julie Babaeva      | Developer    | [@JulieBabaeva](https://github.com/JulieBabaeva)           |
 | Viktoriia Abramova | Developer    | [@viktoriaabc](https://github.com/viktoriaabc)             |
-| Dmytro Levchenko   | Developer    | [@d-levchenko](https://github.com/d-levcheno)              |
+| Dmytro Levchenko   | Developer    | [@d-levchenko](https://github.com/d-levchenko)             |
 | Viktoriia Dmytryk  | Developer    | [@viktoriia-dmytryk](https://github.com/viktoriia-dmytryk) |
 
 ---
