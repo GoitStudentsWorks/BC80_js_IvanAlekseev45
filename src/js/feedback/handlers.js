@@ -135,7 +135,7 @@ function equalizeSlideHeights() {
     item.style.flexDirection = 'column';
     item.style.justifyContent = 'space-between';
   });
-
+  let swiper = null;
   requestAnimationFrame(() => {
     let maxHeight = 0;
     items.forEach(item => {
