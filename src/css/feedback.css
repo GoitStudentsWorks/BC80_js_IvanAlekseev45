@@ -265,3 +265,8 @@
   padding-top: 10px;
   padding-bottom: 10px;
 }
+.button-prev.swiper-button-disabled,
+.button-next.swiper-button-disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
