@@ -7,4 +7,5 @@ import './js/header/header';
 import './js/hero/hero';
 import './js/bestsellers/bestsellers';
 import './js/order-modal/order-modal';
-import './js/about-us/about-us'
+import './js/about-us/about-us';
+import './js/scroll-up';
