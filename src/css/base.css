@@ -61,3 +61,6 @@
 html {
   scroll-behavior: smooth;
 }
+body {
+  background-color: var(--color-scheme-1-background);
+}

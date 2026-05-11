@@ -105,16 +105,10 @@
 @media screen and (min-width: 1440px) {
   .accordion-container {
     max-width: 865px;
-    padding-right: 32px;
-    padding-left: 32px;
   }
   .faq-title {
     margin-bottom: 80px;
   }
-}
-
-.accordion-section {
-  background: var(--color-scheme-1-background);
 }
 
 /* ................................................................ */
