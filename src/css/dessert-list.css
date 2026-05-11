@@ -326,7 +326,8 @@
 .dessert-load-more-btn {
   border: 1px solid var(--color-wewak);
   border-radius: 100px;
-  width: 335px;
+  width: 100%;
+  max-width: 335px;
   height: 44px;
   margin: 0 auto;
 
@@ -343,6 +344,7 @@
   color: var(--color-neutral-darkest);
 
   @media screen and (min-width: 768px) {
+    max-width: 100%;
     width: 344px;
   }
 
