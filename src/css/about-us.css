@@ -155,11 +155,11 @@ color: var(--color-scheme-1-text);
   }
 
   .about-us__button--prev {
-    left: -22px;
+    left: -28px;
   }
 
   .about-us__button--next {
-    right: -22px;
+    right: -28px;
   }
 
   .about-us__button-icon {
@@ -231,10 +231,10 @@ color: var(--color-scheme-1-text);
   }
 
   .about-us__button--prev {
-    left: -24px;
+    left: -28px;
   }
 
   .about-us__button--next {
-    right: -24px;
+    right: -28px;
   }
 }
