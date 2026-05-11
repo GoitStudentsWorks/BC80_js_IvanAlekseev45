@@ -8,7 +8,7 @@ refs.dropdown.addEventListener('click', e => {
   const btn = e.target.closest('.dessert-category__btn');
   if (!btn) return;
 
-  refs.dropdownText.textContent = btn.textContent;
+  refs.dropdownBtn.textContent = btn.textContent;
   refs.dropdown.classList.remove('is-open');
 });
 
