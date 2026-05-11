@@ -1,7 +1,11 @@
 import refs from './refs';
 import spriteUrl from '../../img/sprite.svg';
+import dynamicImgSizes from './dynamicImgSizes';
 
 const dessertsMarkup = desserts => {
+  const imgWidth = dynamicImgSizes.getImgWidth();
+  const imgHeight = dynamicImgSizes.getImgHeight();
+
   const markup = desserts
     .map(
       ({ _id, name, description, price, category, image }) => `
@@ -20,7 +24,7 @@ const dessertsMarkup = desserts => {
             </div>
           </div>
 
-          <img class="dessert-list__image" src="${image}" alt="${name}" loading="eager" fetchpriority="high" />
+          <img class="dessert-list__image" src="${image}" alt="${name}" width="${imgWidth}" height="${imgHeight}" />
           <p class="dessert-list__category">${category.name}</p>
 
           <p class="dessert-list__title">${name}</p>
@@ -35,7 +39,7 @@ const dessertsMarkup = desserts => {
           </button>
         </div>
       </li>
-      `
+      `,
     )
     .join('');
 
