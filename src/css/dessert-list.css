@@ -139,6 +139,12 @@
     max-width: 335px;
     height: 40px;
 
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-scheme-1-text);
+
     &:active {
       background: var(--color-ice-cold-lighter);
     }
@@ -158,14 +164,6 @@
 
   .category-dropdown.is-open .category-dropdown__btn {
     background: var(--color-ice-cold-lighter);
-  }
-
-  .category-dropdown__text {
-    font-family: var(--font-family);
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5;
-    color: var(--color-scheme-1-text);
   }
 
   .dessert-category {
