@@ -21,7 +21,7 @@
 
   width: 100%;
   max-width: 335px;
-  max-height: calc(100vh - 32px);
+ height: min(711px, calc(100dvh - 128px));
 
   overflow-y: auto;
 

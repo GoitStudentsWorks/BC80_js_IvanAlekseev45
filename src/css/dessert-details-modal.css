@@ -28,7 +28,7 @@
 
   width: 100%;
   max-width: 335px;
-  max-height: calc(100vh - 32px);
+  height: min(711px, calc(100dvh - 128px));
 
   overflow-y: auto;
 
@@ -45,6 +45,7 @@
   position: absolute;
   top: 16px;
   right: 16px;
+  z-index: 20;
 
   display: flex;
   align-items: center;
@@ -88,15 +89,15 @@
 .dessert-modal__content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 24px;
+  align-items: center;
+  gap: 48px;
 }
 
 .dessert-modal__image {
   display: block;
 
   width: 100%;
-  height: 204px;
+  height: 138px;
 
   object-fit: cover;
 
@@ -239,7 +240,15 @@
 
   .dessert-modal {
     max-width: 704px;
+    height: auto;
+    max-height: calc(100dvh - 128px);
+
     padding: 64px 32px;
+  }
+
+  .dessert-modal__content {
+    align-items: flex-start;
+    gap: 24px;
   }
 
   .dessert-modal__image {
@@ -261,7 +270,9 @@
 
   .dessert-modal {
     max-width: 1200px;
-    min-height: 611px;
+    height: 611px;
+    max-height: calc(100dvh - 128px);
+
     padding: 64px;
   }
 
@@ -288,33 +299,4 @@
     width: 310px;
     height: 52px;
   }
-}
-
-
-.iziToast.custom-toast {
-  font-family: var(--font-family) !important;
-  border-radius: 16px !important;
-  overflow: hidden;
-}
-
-.iziToast.custom-toast .iziToast-message {
-  font-family: var(--font-family) !important;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-.iziToast.custom-toast .iziToast-title {
-  font-family: var(--font-family) !important;
-  font-weight: 600;
-}
-
-.iziToast.custom-toast .iziToast-icon {
-  color: #ffffff !important;
-}
-
-.iziToast.custom-toast svg,
-.iziToast.custom-toast svg path {
-  fill: #ffffff !important;
-  stroke: #ffffff !important;
 }
