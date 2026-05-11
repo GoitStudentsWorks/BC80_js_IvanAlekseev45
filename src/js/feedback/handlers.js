@@ -6,8 +6,9 @@ import { refsFeedback } from './refs.js';
 import iziToast from 'izitoast';
 
 const initFeedbackSwiper = () => {
+  const isMobile = window.innerWidth < 768;
   new Swiper('.feedback-swiper', {
-    loop: true,
+    loop: !isMobile,
     speed: 600,
     slidesPerView: 1,
     centeredSlides: true,
@@ -41,6 +42,7 @@ const initFeedbackSwiper = () => {
       768: {
         slidesPerView: 3,
         spaceBetween: 24,
+        centeredSlides: false,
       },
       1440: {
         slidesPerView: 3,
