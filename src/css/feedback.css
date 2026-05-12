@@ -80,9 +80,6 @@
 /* Контейнер слайдера */
 .feedback-slider-container {
   position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
 }
 
 .feedback-section .swiper.feedback-swiper {
@@ -214,12 +211,12 @@
 
 .button-next {
   @media only screen and (min-width: 768px) {
-    transform: translateX(34%);
+    transform: translateX(64%);
   }
 }
 .button-prev {
   @media only screen and (min-width: 768px) {
-    transform: translateX(-34%);
+    transform: translateX(-64%);
   }
 }
 
