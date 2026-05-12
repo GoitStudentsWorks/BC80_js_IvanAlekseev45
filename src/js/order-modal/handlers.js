@@ -5,6 +5,19 @@ import postOrder from '../api-requests/postOrder.js';
 
 import { closeOrderModal, getSelectedDessertId } from './order-modal.js';
 
+
+const getToastWidth = () => {
+  if (window.matchMedia('(max-width: 374px)').matches) {
+    return window.innerWidth - 32;
+  }
+
+  if (window.matchMedia('(max-width: 767px)').matches) {
+    return 320;
+  }
+
+  return 640;
+};
+
 export const onBackdropClick = event => {
   if (event.target.classList.contains('order-modal-backdrop')) {
     closeOrderModal();
@@ -34,6 +47,7 @@ export const onOrderFormSubmit = async event => {
       color: '#FFC9C9',
       messageColor: '#000000',
       class: 'custom-toast',
+      maxWidth: getToastWidth(),
     });
 
     return;
@@ -48,11 +62,12 @@ export const onOrderFormSubmit = async event => {
 
   if (!name) {
     iziToast.error({
-      message: 'Введіть ім’я',
+      message: 'Будь ласка, введіть Ваше ім`я',
       position: 'center',
       color: '#f5b6b6',
       messageColor: '#000000',
       class: 'custom-toast',
+      maxWidth: getToastWidth(),
     });
 
     return;
@@ -60,11 +75,12 @@ export const onOrderFormSubmit = async event => {
 
   if (name.length < 2) {
     iziToast.error({
-      message: 'Ім’я має містити щонайменше 2 символи',
+      message: 'Ім`я має містити щонайменше 2 символи',
       position: 'center',
       color: '#f5b6b6',
       messageColor: '#000000',
       class: 'custom-toast',
+      maxWidth: getToastWidth(),
     });
 
     return;
@@ -79,6 +95,7 @@ export const onOrderFormSubmit = async event => {
       color: '#f5b6b6',
       messageColor: '#000000',
       class: 'custom-toast',
+      maxWidth: getToastWidth(),
     });
 
     return;
@@ -86,11 +103,12 @@ export const onOrderFormSubmit = async event => {
 
   if (!comment) {
     iziToast.error({
-      message: 'Введіть коментар',
+      message: 'Для нас важлива Ваша думка',
       position: 'center',
       color: '#f5b6b6',
       messageColor: '#000000',
       class: 'custom-toast',
+      maxWidth: getToastWidth(),
     });
 
     return;
@@ -103,6 +121,7 @@ export const onOrderFormSubmit = async event => {
       color: '#f5b6b6',
       messageColor: '#000000',
       class: 'custom-toast',
+      maxWidth: getToastWidth(),
     });
 
     return;
@@ -124,6 +143,7 @@ export const onOrderFormSubmit = async event => {
       color: '#aefcd2',
       messageColor: '#000000',
       class: 'custom-toast',
+      maxWidth: getToastWidth(),
     });
 
     form.reset();
@@ -141,6 +161,7 @@ export const onOrderFormSubmit = async event => {
       color: '#f5b6b6',
       messageColor: '#000000',
       class: 'custom-toast',
+      maxWidth: getToastWidth(),
     });
   }
 };

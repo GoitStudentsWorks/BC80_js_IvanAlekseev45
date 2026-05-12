@@ -21,7 +21,7 @@
 
   width: 100%;
   max-width: 335px;
- height: calc(100dvh - 128px);
+  max-height: calc(100dvh - 128px);
 
   overflow-y: auto;
 
@@ -225,7 +225,6 @@
 .iziToast.custom-toast {
   border-radius: 16px !important;
   overflow: hidden;
-
   font-family: var(--font-family) !important;
 }
 
