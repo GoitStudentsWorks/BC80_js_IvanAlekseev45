@@ -264,7 +264,7 @@ Workflow знаходиться у файлі `.github/workflows/`.
 | Julie Babaeva      | Developer    | [@JulieBabaeva](https://github.com/JulieBabaeva)          |
 | Viktoriia Abramova | Developer    | [@viktoriaabc](https://github.com/viktoriaabc)            |
 | Dmytro Levchenko   | Developer    | [@d-levchenko](https://github.com/d-levchenko)            |
-| Viktoriia Dmytryk  | Developer    | [@viktoriia-dmytryk](https://github.com/viktoriia-dmytyk) |
+| Viktoriia Dmytryk  | Developer    | [@viktoriia-dmytryk](https://github.com/viktoriia-dmytryk) |
 
 ---
 
