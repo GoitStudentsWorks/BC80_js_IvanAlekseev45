@@ -77,7 +77,7 @@ export function renderBestsellers(array) {
       ({ image, category, description, name, price, _id }) =>
         `<li class="bestsellers-list-item swiper-slide">
           <div class="bestsellers-top">
-            <img class="bestsellers-image" src="${image}" alt="${name}"  style="display:none"/>
+            <img class="bestsellers-image" src="${image}" alt="${name}"  style="display:none" loaling="lazy" />
             <p class="bestsellers-category">${category.name}</p>
             <h3 class="bestsellers-name">${name}</h3>
             <p class="bestsellers-description">${description}</p>
