@@ -3,6 +3,7 @@ import dessertsMarkup from './dessertsMarkup';
 import renderDesserts from './renderDesserts';
 import loader from './loader';
 import refs from './refs';
+import skeleton from './dessertsCustomSkeleton';
 
 import iziToast from 'izitoast';
 
@@ -35,7 +36,7 @@ const handleCategoryFilter = async e => {
   btn.classList.add('active__btn');
 
   refs.dessertList.innerHTML = '';
-  loader.showLoader();
+  skeleton.dessertsCreateSkeleton();
 
   try {
     const desserts = await getDessertsResponse(page, categoryId);
@@ -48,6 +49,7 @@ const handleCategoryFilter = async e => {
     });
   } finally {
     loader.hideLoader();
+    skeleton.dessertsRemoveSkeleton();
   }
 };
 
