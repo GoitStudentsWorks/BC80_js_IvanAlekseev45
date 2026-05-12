@@ -3,9 +3,10 @@ import getDessertsResponse from '../api-requests/getDessertsResponse.js';
 import dessertsMarkup from './dessertsMarkup.js';
 import loader from './loader.js';
 import iziToast from 'izitoast';
+import skeleton from './dessertsCustomSkeleton.js';
 
 const renderDesserts = async (page = 1, category = 'all') => {
-  loader.showLoader();
+  skeleton.dessertsCreateSkeleton();
 
   try {
     const { desserts } = await getDessertsResponse(page, category);
@@ -20,6 +21,8 @@ const renderDesserts = async (page = 1, category = 'all') => {
       message: 'Виникла помилка при завантаженні десертів, спробуйте пізніше.',
       position: 'topRight',
     });
+  } finally {
+    skeleton.dessertsRemoveSkeleton();
   }
 };
 
