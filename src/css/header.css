@@ -2,6 +2,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
 }
 
 .header-logo-nav {
@@ -26,12 +29,10 @@
     display: flex;
     align-items: center;
     column-gap: 16px;
-    margin-left: 38px;
   }
 
   @media screen and (min-width: 1440px) {
     column-gap: 32px;
-    margin-left: 584px;
   }
 }
 
