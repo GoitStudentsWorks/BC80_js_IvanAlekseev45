@@ -10,6 +10,18 @@ import {
   getModalRoot,
 } from './dessert-details-modal.js';
 
+const getToastWidth = () => {
+  if (window.matchMedia('(max-width: 374px)').matches) {
+    return window.innerWidth - 32;
+  }
+
+  if (window.matchMedia('(max-width: 767px)').matches) {
+    return 335;
+  }
+
+  return 640;
+};
+
 export const onOpenDessertModalClick = async event => {
   const openModalBtn = event.target.closest('.js-dessert-modal-open');
 
@@ -26,6 +38,7 @@ export const onOpenDessertModalClick = async event => {
       color: '#F5B6B6',
       messageColor: '#000000',
       class: 'custom-toast',
+      maxWidth: getToastWidth(),
     });
 
     return;
@@ -45,6 +58,7 @@ export const onOpenDessertModalClick = async event => {
       color: '#FFC9C9',
       messageColor: '#000000',
       class: 'custom-toast',
+      maxWidth: getToastWidth(),
     });
 
     console.log(error);
