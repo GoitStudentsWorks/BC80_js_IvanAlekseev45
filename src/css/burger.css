@@ -55,7 +55,18 @@
   height: 48px;
 }
 
+.burger-nav-link:hover,
+.burger-nav-link:focus {
+  border-bottom: 1px solid var(--color-scheme-1-text);
+}
+
+.burger-nav-item:active {
+  text-decoration: underline;
+  color: var(--color-wewak);
+}
+
 .burger-nav-link {
+  padding: 4px 0;
   transition: transform 250ms linear;
 }
 .burger-order-btn {
