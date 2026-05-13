@@ -139,7 +139,7 @@ export const onOrderFormSubmit = async event => {
 
     iziToast.success({
       message: 'Замовлення успішно відправлено!',
-      position: 'topRight',
+      position: 'center',
       color: '#aefcd2',
       messageColor: '#000000',
       class: 'custom-toast',
@@ -147,7 +147,8 @@ export const onOrderFormSubmit = async event => {
     });
 
     form.reset();
-    closeOrderModal();
+    closeOrderModal({ shouldDestroyToasts: false });
+
   } catch (error) {
     console.log('Error in order submit:', error);
     console.log('Server response:', error.response?.data);

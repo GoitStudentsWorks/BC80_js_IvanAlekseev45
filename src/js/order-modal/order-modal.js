@@ -1,6 +1,8 @@
 import { refs } from './refs.js';
 import spriteUrl from '../../img/sprite.svg?url';
 
+import iziToast from 'izitoast';
+
 import {
   onBackdropClick,
   onEscKeydown,
@@ -105,9 +107,13 @@ export const openOrderModal = dessertId => {
   form.addEventListener('submit', onOrderFormSubmit);
 };
 
-export const closeOrderModal = () => {
+export const closeOrderModal = ({ shouldDestroyToasts = true } = {}) => {
   if (!orderModalRoot) {
     return;
+  }
+
+  if (shouldDestroyToasts) {
+    iziToast.destroy();
   }
 
   const closeBtn = orderModalRoot.querySelector('.js-order-modal-close');
@@ -125,6 +131,29 @@ export const closeOrderModal = () => {
 
   refs.body.classList.remove('no-scroll');
 };
+
+// export const closeOrderModal = () => {
+//   if (!orderModalRoot) {
+//     return;
+//   }
+
+//   iziToast.destroy();
+
+//   const closeBtn = orderModalRoot.querySelector('.js-order-modal-close');
+//   closeBtn?.removeEventListener('click', onCloseBtnClick);
+
+//   const form = orderModalRoot.querySelector('.js-order-form');
+//   form?.removeEventListener('submit', onOrderFormSubmit);
+
+//   orderModalRoot.removeEventListener('click', onBackdropClick);
+//   document.removeEventListener('keydown', onEscKeydown);
+
+//   orderModalRoot.remove();
+//   orderModalRoot = null;
+//   selectedDessertId = null;
+
+//   refs.body.classList.remove('no-scroll');
+// };
 
 export const getSelectedDessertId = () => {
   return selectedDessertId;
