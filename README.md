@@ -255,15 +255,15 @@ Workflow знаходиться у файлі `.github/workflows/`.
 
 ## 👥 Команда
 
-| Розробник          | Роль         | GitHub                                                     |
-| ------------------ | ------------ | ---------------------------------------------------------- |
-| Ivan Alekseev      | Team Lead    | [@IvanAlekseev45](https://github.com/IvanAlekseev45)       |
-| Romario Korzun     | Scrum Master | [@mrkorzun](https://github.com/mrkorzun)                   |
-| Alena Shykova      | Developer    | [@igra26](https://github.com/Tigra26)                      |
-| Daniil_Renhevych   | Developer    | [@Huliga101](https://github.com/Huliga101)                 |
-| Julie Babaeva      | Developer    | [@JulieBabaeva](https://github.com/JulieBabaeva)           |
-| Viktoriia Abramova | Developer    | [@viktoriaabc](https://github.com/viktoriaabc)             |
-| Dmytro Levchenko   | Developer    | [@d-levchenko](https://github.com/d-levchenko)             |
+| Розробник          | Роль         | GitHub                                                    |
+| ------------------ | ------------ | --------------------------------------------------------- |
+| Ivan Alekseev      | Team Lead    | [@IvanAlekseev45](https://github.com/IvanAlekseev45)      |
+| Romario Korzun     | Scrum Master | [@mrkorzun](https://github.com/mrkorzun)                  |
+| Alena Shykova      | Developer    | [@igra26](https://github.com/Tigra26)                     |
+| Daniil_Renhevych   | Developer    | [@Huliga101](https://github.com/Huliga101)                |
+| Julie Babaeva      | Developer    | [@JulieBabaeva](https://github.com/JulieBabaeva)          |
+| Viktoriia Abramova | Developer    | [@viktoriaabc](https://github.com/viktoriaabc)            |
+| Dmytro Levchenko   | Developer    | [@d-levchenko](https://github.com/d-levchenko)            |
 | Viktoriia Dmytryk  | Developer    | [@viktoriia-dmytryk](https://github.com/viktoriia-dmytryk) |
 
 ---

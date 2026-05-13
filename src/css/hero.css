@@ -1,25 +1,30 @@
-.hero-section {
+.container.hero {
   background-color: black;
+  padding-top: 155px;
+  padding-bottom: 155px;
 
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
 
-  padding-top: 155px;
-  padding-bottom: 155px;
+  background-size: cover;
 
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     image-set(
-      url('../img/hero/AVIF/hero-mob.avif') type('image/avif') 1x,
-      url('../img/hero/AVIF/hero-mob-2x.avif') type('image/avif') 2x,
-
-      url('../img/hero/WEBP/hero-mob.webp') type('image/webp') 1x,
-      url('../img/hero/WEBP/hero-mob-2x.webp') type('image/webp') 2x,
-
-      url('../img/hero/jpeg/hero-mob.jpg') type('image/jpeg') 1x,
-      url('../img/hero/jpeg/hero-mob-2x.jpg') type('image/jpeg') 2x
+      url('../img/hero/AVIF/hero-mob.avif') type('image/avif'),
+      url('../img/hero/WEBP/hero-mob.webp') type('image/webp'),
+      url('../img/hero/jpeg/hero-mob.jpg') type('image/jpeg')
     );
+
+  @media screen and (min-resolution: 2x) {
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      image-set(
+        url('../img/hero/AVIF/hero-mob-2x.avif') type('image/avif'),
+        url('../img/hero/WEBP/hero-mob-2x.webp') type('image/webp'),
+        url('../img/hero/jpeg/hero-mob-2x.jpg') type('image/jpeg')
+      );
+  }
 }
 
 .main-title {
@@ -54,8 +59,7 @@
   justify-content: center;
 
   width: 219px;
-  height: 44px;
-
+  min-height: 44px;
   margin: 0 auto;
   padding: 10px 24px;
 
@@ -83,25 +87,32 @@
   background-color: var(--color-wewak-dark);
 }
 
-/* ......tablet....... */
+/* tablet */
 
 @media screen and (min-width: 768px) {
-  .hero-section {
+  .container.hero {
     padding-top: 325px;
     padding-bottom: 325px;
 
     background-image:
       linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       image-set(
-        url('../img/hero/AVIF/hero-tablet.avif') type('image/avif') 1x,
-        url('../img/hero/AVIF/hero-tablet-2x.avif') type('image/avif') 2x,
-
-        url('../img/hero/WEBP/hero-tablet.webp') type('image/webp') 1x,
-        url('../img/hero/WEBP/hero-tablet-2x.webp') type('image/webp') 2x,
-
-        url('../img/hero/jpeg/hero-tablet.jpg') type('image/jpeg') 1x,
-        url('../img/hero/jpeg/hero-tablet-2x.jpg') type('image/jpeg') 2x
+        url('../img/hero/AVIF/hero-tablet.avif') type('image/avif'),
+        url('../img/hero/WEBP/hero-tablet.webp') type('image/webp'),
+        url('../img/hero/jpeg/hero-tablet.jpg') type('image/jpeg')
       );
+  }
+
+  @media screen and (min-resolution: 2x) {
+    .container.hero {
+      background-image:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        image-set(
+          url('../img/hero/AVIF/hero-tablet-2x.avif') type('image/avif'),
+          url('../img/hero/WEBP/hero-tablet-2x.webp') type('image/webp'),
+          url('../img/hero/jpeg/hero-tablet-2x.jpg') type('image/jpeg')
+        );
+    }
   }
 
   .main-title {
@@ -113,25 +124,30 @@
   }
 }
 
-/* ...... desk ......... */
+/* desktop */
 
 @media screen and (min-width: 1440px) {
-  .hero-section {
+  .container.hero {
     padding-top: 306px;
     padding-bottom: 306px;
 
     background-image:
       linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       image-set(
-        url('../img/hero/AVIF/hero-desk.avif') type('image/avif') 1x,
-        url('../img/hero/AVIF/hero-desk-2x.avif') type('image/avif') 2x,
-
-        url('../img/hero/WEBP/hero-desk.webp') type('image/webp') 1x,
-        url('../img/hero/WEBP/hero-desk-2x.webp') type('image/webp') 2x,
-
-        url('../img/hero/jpeg/hero-desk.jpg') type('image/jpeg') 1x,
-        url('../img/hero/jpeg/hero-desk-2x.jpg') type('image/jpeg') 2x
+        url('../img/hero/AVIF/hero-desk.avif') type('image/avif'),
+        url('../img/hero/WEBP/hero-desk.webp') type('image/webp'),
+        url('../img/hero/jpeg/hero-desk.jpg') type('image/jpeg')
       );
+
+    @media screen and (min-resolution: 2x) {
+      background-image:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        image-set(
+          url('../img/hero/AVIF/hero-desk-2x.avif') type('image/avif'),
+          url('../img/hero/WEBP/hero-desk-2x.webp') type('image/webp'),
+          url('../img/hero/jpeg/hero-desk-2x.jpg') type('image/jpeg')
+        );
+    }
   }
 
   .main-title {
