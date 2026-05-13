@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/sugar-rush-labs/",
+    "build": "vite build --base=/BC80_js_IvanAlekseev45/",
     "preview": "vite preview"
   },
   "devDependencies": {
