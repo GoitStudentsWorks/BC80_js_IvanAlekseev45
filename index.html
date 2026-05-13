@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Солодка Майстерня — смачні десерти, солодкі булочки та авторська випічка, створені з любов'ю. Перегляньте наше меню, галерею та зв'яжіться з нами."
+    />
+
+    <link rel="icon" type="image/x-icon" href="/BC80_js_IvanAlekseev45/favicon.svg" />
+    <title>Солодка майстерня</title>
+    <script type="module" crossorigin src="/BC80_js_IvanAlekseev45/index.js"></script>
+    <link rel="modulepreload" crossorigin href="/BC80_js_IvanAlekseev45/assets/vendor-BRBGmNfy.js">
+    <link rel="stylesheet" crossorigin href="/BC80_js_IvanAlekseev45/assets/vendor-BRwH1jYQ.css">
+    <link rel="stylesheet" crossorigin href="/BC80_js_IvanAlekseev45/assets/index-Bt3WGc1O.css">
+  </head>
+  <body>
+    <header class="header">
+  <div class="container header-container">
+    <div class="header-logo-nav">
+      <a
+        href="index.html"
+        class="logo-link"
+        aria-label="Головна сторінка Солодка Майстерня"
+      >
+        <svg class="header-logo-icon" width="158" height="72">
+          <use href="/BC80_js_IvanAlekseev45/assets/logo-Vgu1ofOS.svg#icon-logo"></use>
+        </svg>
+      </a>
+      <nav class="header-nav">
+        <ul class="header-nav-list">
+          <li class="header-nav-item">
+            <a href="#sweets" class="header-nav-link">Солодощі</a>
+          </li>
+          <li class="header-nav-item">
+            <a href="#about-us" class="header-nav-link">Про нас</a>
+          </li>
+          <li class="header-nav-item">
+            <a href="#feedbacks" class="header-nav-link">Відгуки</a>
+          </li>
+          <li class="header-nav-item">
+            <a href="#faq" class="header-nav-link">Часті запитання</a>
+          </li>
+        </ul>
+        <a class="order-btn" href="#sweets">До покупок</a>
+      </nav>
+    </div>
+
+    <button
+      type="button"
+      class="open-burger-btn"
+      aria-label="Відкрити навігаційне меню"
+    >
+      <svg class="open-burger-btn" width="24" height="24">
+        <use href="/BC80_js_IvanAlekseev45/assets/sprite-BU3it7Y0.svg#icon-menu"></use>
+      </svg>
+    </button>
+  </div>
+</header>
+
+    <main>
+      <section>
+  <div class="container hero">
+    <h1 class="main-title">Ласкаво просимо до Солодкої Майстерні</h1>
+
+    <p class="main-description">
+      Відкрийте для себе наші неперевершені десерти, приготовані з любов'ю та
+      увагою до деталей. Кожен шматочок — це справжнє свято смаку!
+    </p>
+
+    <a href="#feedbacks" class="main-title-link">Що про нас думають</a>
+  </div>
+</section>
+
+      <section class="section bestsellers-sections">
+  <div class="container bestsellers">
+    <h2 class="bestsellers-title">Наші бестселлери</h2>
+
+    <div class="bestseller-loader-wrapper">
+      <div class="span-best-load">
+        <div class="loader bestsellers-loader" aria-hidden="true" role="status">
+          <div class="cup">
+            <div class="cup-handle"></div>
+            <div class="smoke one"></div>
+            <div class="smoke two"></div>
+            <div class="smoke three"></div>
+          </div>
+          <div class="load">..........................</div>
+        </div>
+      </div>
+
+      <div class="swiper-bestsellers">
+        <ul class="bestsellers-list swiper-wrapper"></ul>
+
+        <nav class="paginate-box" aria-label="Навігація по слайдах">
+          <div class="swiper-pagination"></div>
+          <div class="bestsellers-nav-btn">
+            <button
+              class="page-left-btn"
+              type="button"
+              aria-label="Попередній слайд"
+            >
+              <svg
+                class="bestsellers-button-svg"
+                width="24"
+                height="24"
+                aria-hidden="true"
+              >
+                <use href="/BC80_js_IvanAlekseev45/assets/sprite-BU3it7Y0.svg#icon-arrow_back"></use>
+              </svg>
+            </button>
+            <button
+              class="page-right-btn"
+              type="button"
+              aria-label="Наступний слайд"
+            >
+              <svg
+                class="bestsellers-button-svg"
+                width="24"
+                height="24"
+                aria-hidden="true"
+              >
+                <use href="/BC80_js_IvanAlekseev45/assets/sprite-BU3it7Y0.svg#icon-arrow_forward"></use>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="section dessert-list-section" id="sweets">
+  <div class="container">
+    <div class="dessert-tablet__wrapper">
+      <div class="dessert-tablet-title-left-section">
+        <h2 class="dessert-section__title">Солодощі</h2>
+        <p class="dessert-section__description">
+          Спробуйте наші смачні десерти, які вас здивують!
+        </p>
+      </div>
+
+      <div class="category-dropdown">
+        <div class="category-wrapper__arrow">
+          <button class="category-dropdown__btn" type="button">
+            Всі десерти
+          </button>
+          <span class="category-dropdown__arrow">
+            <svg width="24" height="24" aria-hidden="true">
+              <use href="/BC80_js_IvanAlekseev45/assets/sprite-BU3it7Y0.svg#icon-keyboard_arrow_down"></use>
+            </svg>
+          </span>
+        </div>
+
+        <ul class="dessert-category"></ul>
+      </div>
+    </div>
+
+    <ul class="dessert-list"></ul>
+
+    <div class="loader dessert-loader">
+      <div class="cup">
+        <div class="cup-handle"></div>
+        <div class="smoke one"></div>
+        <div class="smoke two"></div>
+        <div class="smoke three"></div>
+      </div>
+      <div class="load">..........................</div>
+    </div>
+
+    <button class="dessert-load-more-btn dessert-button-hidden" type="button">
+      Завантажити ще
+    </button>
+  </div>
+</section>
+
+      <section class="about-us section" id="about-us">
+  <div class="container">
+    <div class="about-us__content">
+      <!-- Заголовок секції. Тихо, чисто, по макету. -->
+      <h2 class="about-us__title">Про Нашу Майстерню</h2>
+
+      <!-- Короткий опис. -->
+      <p class="about-us__text">
+        У нашій 'Солодкій Майстерні' ми створюємо неповторні солодкі шедеври, що
+        приносять радість та задоволення. Наша місія — пропонувати високоякісні
+        десерти, які поєднують у собі вишуканий смак, свіжі інгредієнти та
+        естетичний вигляд.
+      </p>
+
+      <!-- Галерея: на мобілці статична, на tablet/desktop оживає через Swiper. -->
+      <div class="about-us__slider">
+        <div class="about-us__viewport swiper">
+          <ul class="about-us__list swiper-wrapper">
+            <li class="about-us__item swiper-slide">
+              <picture>
+                <source
+                  media="(min-width: 1440px)"
+                  srcset="/BC80_js_IvanAlekseev45/assets/about-us-1-desk-C4hav65R.jpg 1x, /BC80_js_IvanAlekseev45/assets/about-us-1-desk-2x-BZELngWO.jpg 2x"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="/BC80_js_IvanAlekseev45/assets/about-us-1-tablet-CyNYalsi.jpg 1x, /BC80_js_IvanAlekseev45/assets/about-us-1-tablet-2x-DOnXtRid.jpg 2x"
+                />
+                <source
+                  media="(max-width: 767px)"
+                  srcset="/BC80_js_IvanAlekseev45/assets/about-us-1-mob-D3vRpxBZ.jpg 1x, /BC80_js_IvanAlekseev45/assets/about-us-1-mob-2x-1lLOYWM7.jpg 2x"
+                />
+                <img
+                  class="about-us__image"
+                  src="/BC80_js_IvanAlekseev45/assets/about-us-1-mob-D3vRpxBZ.jpg"
+                  alt="Приготування десерту"
+                />
+              </picture>
+            </li>
+
+            <li class="about-us__item swiper-slide">
+              <picture>
+                <source
+                  media="(min-width: 1440px)"
+                  srcset="/BC80_js_IvanAlekseev45/assets/about-us-2-desk-BC6Kvk8X.jpg 1x, /BC80_js_IvanAlekseev45/assets/about-us-2-desk-2x-RB8_bxPH.jpg 2x"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="/BC80_js_IvanAlekseev45/assets/about-us-2-tablet-DeLqZUA9.jpg 1x, /BC80_js_IvanAlekseev45/assets/about-us-2-tablet-2x-B4hl2IJU.jpg 2x"
+                />
+                <source
+                  media="(max-width: 767px)"
+                  srcset="/BC80_js_IvanAlekseev45/assets/about-us-2-mob-2x-DrUvUsyH.jpg 2x"
+                />
+                <img
+                  class="about-us__image"
+                  src="/BC80_js_IvanAlekseev45/assets/about-us-2-tablet-DeLqZUA9.jpg"
+                  alt="Команда Солодкої Майстерні"
+                />
+              </picture>
+            </li>
+
+            <li class="about-us__item swiper-slide">
+              <picture>
+                <source
+                  media="(min-width: 1440px)"
+                  srcset="/BC80_js_IvanAlekseev45/assets/about-us-3-desk-DXGwWzYV.jpg 1x, /BC80_js_IvanAlekseev45/assets/about-us-3-desk-2x-CIJj6LB3.jpg 2x"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="/BC80_js_IvanAlekseev45/assets/about-us-3-tablet-NyqOR00E.jpg 1x"
+                />
+                <source
+                  media="(max-width: 767px)"
+                  srcset="/BC80_js_IvanAlekseev45/assets/about-us-3-mob-CmVM5ySC.jpg 1x, /BC80_js_IvanAlekseev45/assets/about-us-3-mob-2x-DtshnbBu.jpg 2x"
+                />
+                <img
+                  class="about-us__image"
+                  src="/BC80_js_IvanAlekseev45/assets/about-us-3-mob-CmVM5ySC.jpg"
+                  alt="Вітрина з десертами"
+                />
+              </picture>
+            </li>
+
+            <li class="about-us__item swiper-slide">
+              <picture>
+                <source
+                  media="(min-width: 1440px)"
+                  srcset="/BC80_js_IvanAlekseev45/assets/about-us-4-desk-DW1mfxhe.jpg 1x, /BC80_js_IvanAlekseev45/assets/about-us-4-desk-2x-DoyVRONW.jpg 2x"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="/BC80_js_IvanAlekseev45/assets/about-us-4-tablet-C260Bvxm.jpg 1x, /BC80_js_IvanAlekseev45/assets/about-us-4-tablet-2x-Bn-ZxuI7.jpg 2x"
+                />
+                <source
+                  media="(max-width: 767px)"
+                  srcset="/BC80_js_IvanAlekseev45/assets/about-us-4-mob-tG6s40pG.jpg 1x, /BC80_js_IvanAlekseev45/assets/about-us-4-mob-2x-B-Sbl0bM.jpg 2x"
+                />
+                <img
+                  class="about-us__image"
+                  src="/BC80_js_IvanAlekseev45/assets/about-us-4-mob-tG6s40pG.jpg"
+                  alt="Дівчина з десертом"
+                />
+              </picture>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Slider navigation -->
+        <button
+          class="about-us__button about-us__button--prev"
+          type="button"
+          aria-label="Попередній слайд"
+          tabindex="0"
+        >
+          <svg
+            class="about-us__button-icon"
+            width="24"
+            height="24"
+            aria-hidden="true"
+          >
+            <use href="/BC80_js_IvanAlekseev45/assets/sprite-BU3it7Y0.svg#icon-arrow_back"></use>
+          </svg>
+        </button>
+
+        <button
+          class="about-us__button about-us__button--next"
+          type="button"
+          aria-label="Наступний слайд"
+          tabindex="0"
+        >
+          <svg
+            class="about-us__button-icon"
+            width="24"
+            height="24"
+            aria-hidden="true"
+          >
+            <use href="/BC80_js_IvanAlekseev45/assets/sprite-BU3it7Y0.svg#icon-arrow_forward"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Custom slider pagination -->
+    <div>
+      <nav class="about-us__pagination" aria-label="Slider pagination"></nav>
+    </div>
+  </div>
+</section>
+
+      <button class="scroll-top hidden">
+  <svg width="20" height="20">
+    <use href="/BC80_js_IvanAlekseev45/assets/arrow-up-DWztwai9.svg#icon-arrow_up"></use>
+  </svg>
+</button>
+
+      <section class="feedback-section" id="feedbacks">
+  <div class="container feedbacks">
+    <h2 class="feedback-main-title">Відгуки клієнтів</h2>
+    <p class="feedback-subtitle">
+      Найкращі десерти, які я коли-небудь куштував!
+    </p>
+    <div class="loader-backdrop is-hidden">
+      <div class="loader">
+        <div class="cup">
+          <div class="cup-handle"></div>
+          <div class="smoke one"></div>
+          <div class="smoke two"></div>
+          <div class="smoke three"></div>
+        </div>
+        <div class="load">..........................</div>
+      </div>
+    </div>
+    <div class="feedback-slider-container">
+      <div class="swiper feedback-swiper">
+        <ul class="swiper-wrapper feedback-swipper" id="feedback-list"></ul>
+        <nav class="nav-paginations-feedbacks">
+          <div class="swiper-pagination"></div>
+          <div class="feedback-button-wrapper">
+            <button type="button" class="button-prev">
+              <svg width="24" height="24">
+                <use href="/BC80_js_IvanAlekseev45/assets/sprite-BU3it7Y0.svg#icon-arrow_back"></use>
+              </svg>
+            </button>
+            <button type="button" class="button-next">
+              <svg width="24" height="24">
+                <use href="/BC80_js_IvanAlekseev45/assets/sprite-BU3it7Y0.svg#icon-arrow_forward"></use>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="section" id="faq">
+  <div class="accordion-container">
+    <h2 class="faq-title">Часті питання</h2>
+
+    <div class="ac">
+      <h3 class="ac-header">
+        <button type="button" class="ac-trigger">
+          <span class="ac-title">1. Які способи оплати ви приймаєте?</span>
+          <svg class="ac-icon" width="18" height="18">
+            <use href="/BC80_js_IvanAlekseev45/assets/symbol-defs-DiM1Vepe.svg#icon-faq"></use>
+          </svg>
+        </button>
+      </h3>
+
+      <div class="ac-panel">
+        <p class="ac-text">
+          Ми приймаємо оплату онлайн банківськими картками Visa та Mastercard,
+          через платіжні системи Apple Pay та Google Pay, а також готівкою
+          кур'єру при отриманні замовлення.
+        </p>
+      </div>
+    </div>
+
+    <div class="ac">
+      <h3 class="ac-header">
+        <button type="button" class="ac-trigger">
+          <span class="ac-title">2. Чи є у вас доставка?</span>
+          <svg class="ac-icon" width="18" height="18">
+            <use href="/BC80_js_IvanAlekseev45/assets/symbol-defs-DiM1Vepe.svg#icon-faq"></use>
+          </svg>
+        </button>
+      </h3>
+
+      <div class="ac-panel">
+        <p class="ac-text">
+          Так, ми здійснюємо доставку по всьому місту. Вартість та умови
+          доставки залежать від вашого району, деталі можна уточнити при
+          оформленні замовлення.
+        </p>
+      </div>
+    </div>
+
+    <div class="ac">
+      <h3 class="ac-header">
+        <button type="button" class="ac-trigger">
+          <span class="ac-title">3. Як швидко здійснюється доставка?</span>
+          <svg class="ac-icon" width="18" height="18">
+            <use href="/BC80_js_IvanAlekseev45/assets/symbol-defs-DiM1Vepe.svg#icon-faq"></use>
+          </svg>
+        </button>
+      </h3>
+
+      <div class="ac-panel">
+        <p class="ac-text">
+          Зазвичай доставка займає від 60 до 90 хвилин з моменту підтвердження
+          замовлення. У пікові години час доставки може бути збільшений, про що
+          ми вас обов'язково повідомимо.
+        </p>
+      </div>
+    </div>
+
+    <div class="ac">
+      <h3 class="ac-header">
+        <button type="button" class="ac-trigger">
+          <span class="ac-title"
+            >4. Чи можна забрати замовлення самостійно?</span
+          >
+          <svg class="ac-icon" width="18" height="18">
+            <use href="/BC80_js_IvanAlekseev45/assets/symbol-defs-DiM1Vepe.svg#icon-faq"></use>
+          </svg>
+        </button>
+      </h3>
+
+      <div class="ac-panel">
+        <p class="ac-text">
+          Так, ви можете забрати своє замовлення самостійно за адресою [Вказати
+          адресу самовивозу] у робочі години магазину.
+        </p>
+      </div>
+    </div>
+
+    <div class="ac">
+      <h3 class="ac-header">
+        <button type="button" class="ac-trigger">
+          <span class="ac-title">
+            5. Чи пропонуєте ви десерти для людей з особливими дієтичними
+            потребами (безглютенові, безлактозні, веганські)?
+          </span>
+          <svg class="ac-icon" width="18" height="18">
+            <use href="/BC80_js_IvanAlekseev45/assets/symbol-defs-DiM1Vepe.svg#icon-faq"></use>
+          </svg>
+        </button>
+      </h3>
+
+      <div class="ac-panel">
+        <p class="ac-text">
+          Ми постійно розширюємо наш асортимент. Наразі у нас є обмежений вибір
+          безглютенових та безлактозних десертів. Будь ласка, перегляньте наш
+          каталог або зв'яжіться з нами для отримання детальної інформації.
+        </p>
+      </div>
+    </div>
+
+    <div class="ac">
+      <h3 class="ac-header">
+        <button type="button" class="ac-trigger">
+          <span class="ac-title"
+            >6. Як я можу зробити замовлення на індивідуальний торт?</span
+          >
+          <svg class="ac-icon" width="18" height="18">
+            <use href="/BC80_js_IvanAlekseev45/assets/symbol-defs-DiM1Vepe.svg#icon-faq"></use>
+          </svg>
+        </button>
+      </h3>
+
+      <div class="ac-panel">
+        <p class="ac-text">
+          Для замовлення індивідуального торта, будь ласка, зв'яжіться з нашим
+          менеджером за телефоном [Вказати номер телефону] або залиште заявку на
+          сайті. Ми обговоримо всі деталі дизайну, начинки та терміни виконання.
+        </p>
+      </div>
+    </div>
+
+    <div class="ac">
+      <h3 class="ac-header">
+        <button type="button" class="ac-trigger">
+          <span class="ac-title"
+            >7. Чи можна змінити або скасувати замовлення після його
+            оформлення?</span
+          >
+          <svg class="ac-icon" width="18" height="18">
+            <use href="/BC80_js_IvanAlekseev45/assets/symbol-defs-DiM1Vepe.svg#icon-faq"></use>
+          </svg>
+        </button>
+      </h3>
+
+      <div class="ac-panel">
+        <p class="ac-text">
+          Якщо вам потрібно змінити або скасувати замовлення, будь ласка,
+          негайно зв'яжіться з нами за телефоном. Можливість внесення змін
+          залежить від етапу, на якому знаходиться ваше замовлення.
+        </p>
+      </div>
+    </div>
+
+    <div class="ac">
+      <h3 class="ac-header">
+        <button type="button" class="ac-trigger">
+          <span class="ac-title"
+            >8. Який термін зберігання ваших десертів?</span
+          >
+          <svg class="ac-icon" width="18" height="18">
+            <use href="/BC80_js_IvanAlekseev45/assets/symbol-defs-DiM1Vepe.svg#icon-faq"></use>
+          </svg>
+        </button>
+      </h3>
+
+      <div class="ac-panel">
+        <p class="ac-text">
+          Термін зберігання десертів залежить від їхнього типу та інгредієнтів.
+          Зазвичай десерти рекомендується вживати протягом 24-72 годин. Точна
+          інформація про термін зберігання вказана на упаковці кожного виробу.
+        </p>
+      </div>
+    </div>
+
+    <div class="ac">
+      <h3 class="ac-header">
+        <button type="button" class="ac-trigger">
+          <span class="ac-title"
+            >9. Чи є у вас програма лояльності або знижки для постійних
+            клієнтів?</span
+          >
+          <svg class="ac-icon" width="18" height="18">
+            <use href="/BC80_js_IvanAlekseev45/assets/symbol-defs-DiM1Vepe.svg#icon-faq"></use>
+          </svg>
+        </button>
+      </h3>
+
+      <div class="ac-panel">
+        <p class="ac-text">
+          Так, ми цінуємо наших постійних клієнтів! Деталі нашої програми
+          лояльності та діючих акцій ви можете знайти на окремій сторінці нашого
+          сайту або уточнити у менеджера.
+        </p>
+      </div>
+    </div>
+
+    <div class="ac">
+      <h3 class="ac-header">
+        <button type="button" class="ac-trigger">
+          <span class="ac-title"
+            >10. Що робити, якщо у мене є скарга або пропозиція?</span
+          >
+          <svg class="ac-icon" width="18" height="18">
+            <use href="/BC80_js_IvanAlekseev45/assets/symbol-defs-DiM1Vepe.svg#icon-faq"></use>
+          </svg>
+        </button>
+      </h3>
+
+      <div class="ac-panel">
+        <p class="ac-text">
+          Ми завжди раді зворотному зв'язку! Якщо у вас виникли питання, скарги
+          або пропозиції, будь ласка, напишіть нам на електронну пошту [Вказати
+          email] або зателефонуйте. Ваша думка допомагає нам ставати кращими.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    </main>
+    <footer>
+      <div class="container footer-bg">
+  <div class="footer-top">
+    <a
+      href="index.html"
+      class="footer-logo"
+      aria-label="Головна сторінка Солодка Майстерня"
+    >
+      <svg class="footer-logo-svg" width="309" height="66">
+        <use href="/BC80_js_IvanAlekseev45/assets/logo-Vgu1ofOS.svg#icon-logo"></use>
+      </svg>
+    </a>
+    <nav class="footer-nav" aria-label="Навігація у футері">
+      <ul class="footer-menu">
+        <li><a href="#sweets" class="footer-link">Солодощі</a></li>
+        <li><a href="#about-us" class="footer-link">Про нас</a></li>
+        <li><a href="#feedbacks" class="footer-link">Відгуки</a></li>
+        <li><a href="#faq" class="footer-link">Часті питання</a></li>
+      </ul>
+    </nav>
+
+    <ul class="footer-socials" aria-label="Ми у соцмережах">
+      <li>
+        <a
+          href="https://www.facebook.com/"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+          target="_blank"
+        >
+          <i class="icon-facebook">
+            <svg class="footer-svg" width="32" height="32">
+              <use href="/BC80_js_IvanAlekseev45/assets/sprite-BU3it7Y0.svg#icon-Facebook"></use>
+            </svg>
+          </i>
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.instagram.com/"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+          target="_blank"
+        >
+          <i class="icon-instagram">
+            <svg class="footer-svg" width="24" height="24">
+              <use href="/BC80_js_IvanAlekseev45/assets/sprite-BU3it7Y0.svg#icon-Instagram"></use>
+            </svg>
+          </i>
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.youtube.com/"
+          rel="noopener noreferrer"
+          aria-label="YouTube"
+          target="_blank"
+        >
+          <i class="icon-youtube">
+            <svg class="footer-svg" width="24" height="24">
+              <use href="/BC80_js_IvanAlekseev45/assets/sprite-BU3it7Y0.svg#icon-Youtube"></use>
+            </svg>
+          </i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer-bottom">
+    <p class="footer-copyright">
+      &#169; 2025 Солодка Майстерня. Усі права захищені.
+    </p>
+  </div>
+</div>
+
+    </footer>
+    <div class="burger-menu">
+  <div class="container burger-container">
+    <div class="burger-thumb">
+      <a
+        href="index.html"
+        class="logo-link-burger"
+        aria-label="Головна сторінка Солодка Майстерня"
+      >
+        <svg class="burger-logo-icon" width="158" height="72">
+          <use href="/BC80_js_IvanAlekseev45/assets/logo-Vgu1ofOS.svg#icon-logo"></use>
+        </svg>
+      </a>
+      <button
+        type="button"
+        class="close-burger-btn"
+        aria-label="Закрити навігаційне меню"
+      >
+        <svg class="close-burger-icon" width="24" height="24">
+          <use href="/BC80_js_IvanAlekseev45/assets/sprite-BU3it7Y0.svg#icon-close"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="burger-content">
+      <nav class="burger-nav">
+        <ul class="burger-nav-list">
+          <li class="burger-nav-item">
+            <a href="#sweets" class="burger-nav-link">Солодощі</a>
+          </li>
+          <li class="burger-nav-item">
+            <a href="#about-us" class="burger-nav-link">Про нас</a>
+          </li>
+          <li class="burger-nav-item">
+            <a href="#feedbacks" class="burger-nav-link">Відгуки</a>
+          </li>
+          <li class="burger-nav-item">
+            <a href="#faq" class="burger-nav-link">Часті запитання</a>
+          </li>
+        </ul>
+      </nav>
+      <a class="burger-order-btn" href="#sweets">До покупок</a>
+    </div>
+  </div>
+</div>
+
+
+  </body>
+</html>
