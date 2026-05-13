@@ -45,17 +45,31 @@
   color: var(--color-neutral-darkest);
 }
 
-.header-nav-item:hover,
-.header-nav-item:focus {
-  border-bottom: 1px solid var(--color-scheme-1-text);
-}
-
 .header-nav-item:active {
-  text-decoration: underline;
   color: var(--color-wewak);
 }
+
 .header-nav-link {
-  transition: transform 250ms linear;
+  position: relative;
+
+  &::after,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    transition:
+      width 250ms linear,
+      background-color 250ms linear;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    width: 100%;
+    background-color: var(--color-scheme-1-text);
+  }
 }
 
 .open-burger-btn {
@@ -70,31 +84,33 @@
     display: none;
   }
 }
+
 .order-btn {
   display: flex;
-  text-align: center;
+  align-items: center;
   justify-content: center;
-  box-sizing: border-box;
   width: 133px;
   height: 40px;
-  border: 1px solid var(--color-wewak);
+  border: none;
   background-color: var(--color-wewak);
   border-radius: 100px;
-  padding: 8px 20px;
+
   font-family: var(--font-family);
   font-weight: 500;
   font-size: 16px;
-  line-height: 150%;
+  line-height: 1.5;
   color: var(--color-neutral-darkest);
   transition:
     border-color 250ms linear,
     background-color 250ms linear;
 }
+
 .order-btn:hover,
 .order-btn:focus {
   background-color: transparent;
-  border: 1.9px solid var(--color-neutral-darkest);
+  border: 2px solid var(--color-neutral-darkest);
 }
+
 .order-btn:active {
   background-color: var(--color-wewak-light);
 }
